@@ -5,14 +5,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="Rahul Gaikwad - Professional Portfolio">
-
-<title>Rahul Gaikwad | Portfolio</title>
-
+<title>Rahul Gaikwad | Certificates</title>
 
 <style>
 
@@ -32,607 +27,381 @@ html {
 
 body {
     font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
         Arial,
+        Helvetica,
         sans-serif;
 
-    background: #0b0b0d;
+    background: #edf3ff;
 
-    color: #ffffff;
+    color: #102f63;
 
     min-height: 100vh;
 }
 
 
 /* =========================================================
-   PAGE BACKGROUND
+   TOP HEADER
    ========================================================= */
 
-body::before {
-    content: "";
-
-    position: fixed;
-
-    width: 500px;
-    height: 500px;
-
-    left: -250px;
-    top: -200px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 132, 0, 0.08);
-
-    filter: blur(100px);
-
-    pointer-events: none;
-}
-
-body::after {
-    content: "";
-
-    position: fixed;
-
-    width: 450px;
-    height: 450px;
-
-    right: -250px;
-    bottom: -200px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 70, 0, 0.06);
-
-    filter: blur(100px);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-.navbar {
+.hero {
     width: 100%;
 
-    padding: 24px 5%;
-
-    border-bottom:
-        1px solid rgba(255,255,255,.07);
+    min-height: 315px;
 
     background:
-        rgba(11,11,13,.82);
-
-    backdrop-filter: blur(20px);
+        linear-gradient(
+            115deg,
+            #3c35b9 0%,
+            #304dc9 45%,
+            #146ee8 100%
+        );
 
     position: relative;
 
-    z-index: 20;
+    padding-top: 12px;
+
+    text-align: center;
+
+    color: white;
 }
 
-.nav-inner {
-    max-width: 1250px;
 
-    margin: auto;
+/* Main heading */
 
-    display: flex;
+.hero-title {
+    font-size: 31px;
 
-    align-items: center;
+    font-weight: 500;
 
-    justify-content: space-between;
+    letter-spacing: -0.8px;
+
+    margin-top: 0;
 }
 
-.brand {
-    display: flex;
 
-    align-items: center;
+/* Small blue line */
 
-    gap: 12px;
+.hero-line {
+    width: 193px;
 
-    font-size: 15px;
+    height: 8px;
 
-    font-weight: 800;
+    border-radius: 20px;
 
-    letter-spacing: .3px;
-}
+    background: #52b9f5;
 
-.brand-mark {
-    width: 30px;
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 9px;
-
-    background: #ff8500;
-
-    color: #111;
-
-    font-size: 13px;
-
-    font-weight: 900;
-}
-
-.nav-right {
-    color: #777980;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
+    margin: 32px auto 0;
 }
 
 
 /* =========================================================
-   MAIN LAYOUT
+   MAIN CONTAINER
    ========================================================= */
 
-.wrapper {
-    max-width: 1250px;
+.container {
+    width: min(1160px, calc(100% - 40px));
 
-    min-height: calc(100vh - 80px);
+    margin: -70px auto 60px;
 
-    margin: auto;
-
-    padding: 55px 5% 70px;
-
-    display: grid;
-
-    grid-template-columns:
-        0.85fr 1.5fr;
-
-    gap: 70px;
-}
-
-
-/* =========================================================
-   LEFT SIDE
-   ========================================================= */
-
-.intro {
-    position: sticky;
-
-    top: 40px;
-
-    align-self: start;
-}
-
-.small-label {
-    color: #ff8500;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 20px;
-}
-
-.intro h1 {
-    font-size:
-        clamp(48px, 6vw, 78px);
-
-    line-height: .9;
-
-    letter-spacing: -4px;
-
-    font-weight: 900;
-
-    margin-bottom: 28px;
-}
-
-.intro h1 span {
-    color: #ff8500;
-
-    display: block;
-}
-
-.intro-description {
-    color: #8b8d94;
-
-    max-width: 390px;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    margin-bottom: 38px;
-}
-
-
-/* =========================================================
-   PROFILE BOX
-   ========================================================= */
-
-.profile-box {
-    width: 100%;
-
-    max-width: 390px;
-
-    padding: 20px;
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    background:
-        rgba(255,255,255,.025);
-
-    border-radius: 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-}
-
-.profile-avatar {
-    width: 50px;
-    height: 50px;
-
-    min-width: 50px;
-
-    border-radius: 14px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff8500,
-            #ff5b00
-        );
-
-    color: #111;
-
-    font-size: 18px;
-
-    font-weight: 900;
-}
-
-.profile-info strong {
-    display: block;
-
-    font-size: 14px;
-
-    margin-bottom: 4px;
-}
-
-.profile-info span {
-    color: #777980;
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   LEFT DECORATION
-   ========================================================= */
-
-.vertical-line {
-    position: absolute;
-
-    left: -25px;
-
-    top: 5px;
-
-    width: 2px;
-
-    height: 130px;
-
-    background:
-        linear-gradient(
-            #ff8500,
-            transparent
-        );
-}
-
-
-/* =========================================================
-   RIGHT CONTENT
-   ========================================================= */
-
-.documents {
-    padding-top: 5px;
-}
-
-.documents-header {
-    display: flex;
-
-    align-items: end;
-
-    justify-content: space-between;
-
-    margin-bottom: 25px;
-
-    padding-bottom: 18px;
-
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
-}
-
-.documents-header small {
-    color: #666970;
-
-    font-size: 10px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-}
-
-.documents-header h2 {
-    margin-top: 6px;
-
-    font-size: 27px;
-
-    font-weight: 800;
-
-    letter-spacing: -.8px;
-}
-
-.document-count {
-    color: #666970;
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   DOCUMENT LIST
-   ========================================================= */
-
-.document-list {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 13px;
-}
-
-
-/* =========================================================
-   DOCUMENT
-   ========================================================= */
-
-.document {
     position: relative;
 
-    min-height: 170px;
+    z-index: 2;
+}
 
-    padding: 24px;
 
-    border:
-        1px solid rgba(255,255,255,.08);
+/* =========================================================
+   INTRO WHITE BOX
+   ========================================================= */
 
-    border-radius: 17px;
+.intro-box {
+    background: white;
 
-    background:
-        linear-gradient(
-            110deg,
-            rgba(255,255,255,.045),
-            rgba(255,255,255,.018)
-        );
+    border-radius: 34px;
+
+    min-height: 225px;
+
+    padding:
+        48px 30px
+        42px;
+
+    text-align: center;
+
+    box-shadow:
+        0 18px 45px rgba(40, 82, 145, 0.10);
+}
+
+
+.intro-box h1 {
+    font-size: 61px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    color: #112f63;
+
+    letter-spacing: -2.5px;
+
+    margin-bottom: 17px;
+}
+
+
+.intro-box p {
+    font-size: 29px;
+
+    color: #617897;
+
+    font-weight: 400;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   CERTIFICATE SECTION
+   ========================================================= */
+
+.certificates {
+    margin-top: 38px;
+}
+
+
+/* =========================================================
+   CERTIFICATE CARD
+   ========================================================= */
+
+.certificate-card {
+    background: white;
+
+    border-radius: 34px;
+
+    min-height: 365px;
+
+    padding: 36px;
+
+    position: relative;
+
+    box-shadow:
+        0 18px 45px rgba(40, 82, 145, 0.09);
 
     overflow: hidden;
 
     transition:
-        transform .3s ease,
-        border-color .3s ease,
-        background .3s ease;
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
-.document:hover {
-    transform: translateX(7px);
 
-    border-color:
-        rgba(255,133,0,.35);
+.certificate-card:hover {
+    transform: translateY(-4px);
 
-    background:
-        linear-gradient(
-            110deg,
-            rgba(255,133,0,.08),
-            rgba(255,255,255,.025)
-        );
-}
-
-.document::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    width: 3px;
-
-    background: #ff8500;
-
-    transform: scaleY(0);
-
-    transform-origin: bottom;
-
-    transition: transform .3s ease;
-}
-
-.document:hover::before {
-    transform: scaleY(1);
+    box-shadow:
+        0 25px 55px rgba(40, 82, 145, 0.14);
 }
 
 
 /* =========================================================
-   DOCUMENT TOP
+   CERTIFICATE ICON
    ========================================================= */
 
-.document-top {
-    display: flex;
+.certificate-icon {
+    width: 135px;
 
-    justify-content: space-between;
+    height: 135px;
 
-    align-items: flex-start;
-}
+    border-radius: 32px;
 
-.document-number {
-    color: #55575e;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.document-icon {
-    width: 45px;
-    height: 45px;
-
-    border-radius: 12px;
-
-    background: #171719;
-
-    border:
-        1px solid rgba(255,255,255,.08);
+    background:
+        linear-gradient(
+            145deg,
+            #3159ed,
+            #4433df
+        );
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    font-size: 19px;
+    font-size: 65px;
+
+    box-shadow:
+        0 12px 25px rgba(53, 75, 224, 0.22);
+
+    margin-bottom: 0;
 }
 
 
 /* =========================================================
-   DOCUMENT BODY
+   CERTIFICATE BADGE
    ========================================================= */
 
-.document-body {
-    margin-top: 18px;
-}
+.certificate-badge {
+    display: inline-flex;
 
-.document-body h3 {
-    font-size: 19px;
+    align-items: center;
+
+    justify-content: center;
+
+    height: 42px;
+
+    padding: 0 24px;
+
+    border-radius: 30px;
+
+    background: #dcecff;
+
+    color: #0966cf;
+
+    font-size: 16px;
 
     font-weight: 800;
 
-    margin-bottom: 5px;
-}
+    letter-spacing: .2px;
 
-.document-body p {
-    color: #777980;
-
-    font-size: 12px;
-
-    margin-bottom: 3px;
-}
-
-.document-date {
-    color: #55575e;
-
-    font-size: 10px;
+    margin-top: 0;
 }
 
 
 /* =========================================================
-   DOCUMENT ACTION
+   CERTIFICATE CONTENT
    ========================================================= */
 
-.document-action {
-    position: absolute;
+.certificate-title {
+    font-size: 41px;
 
-    right: 24px;
+    line-height: 1.15;
 
-    bottom: 23px;
+    color: #0d2f63;
+
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
+
+    margin-top: 16px;
+
+    margin-bottom: 12px;
 }
 
+
+.certificate-company {
+    color: #1166d3;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+
+.certificate-meta {
+    color: #607a9b;
+
+    font-size: 21px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+   ========================================================= */
+
 .view-button {
-    border:
-        1px solid rgba(255,133,0,.30);
+    position: absolute;
+
+    right: 190px;
+
+    top: 162px;
+
+    border: none;
+
+    padding:
+        21px 32px;
+
+    min-width: 255px;
+
+    border-radius: 23px;
 
     background:
-        rgba(255,133,0,.08);
+        linear-gradient(
+            110deg,
+            #176ee9,
+            #4a38e7
+        );
 
-    color: #ff9a2e;
+    color: white;
 
-    padding: 9px 15px;
-
-    border-radius: 9px;
-
-    font-size: 11px;
+    font-size: 22px;
 
     font-weight: 800;
 
     cursor: pointer;
 
+    box-shadow:
+        0 14px 30px rgba(53, 77, 224, 0.22);
+
     transition:
-        background .2s ease,
-        color .2s ease,
-        transform .2s ease;
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
+
 .view-button:hover {
-    background: #ff8500;
+    transform: translateY(-3px);
 
-    color: #111;
+    box-shadow:
+        0 18px 38px rgba(53, 77, 224, 0.32);
+}
 
-    transform: translateY(-2px);
+
+.view-button:active {
+    transform: translateY(0);
 }
 
 
 /* =========================================================
-   FUTURE DOCUMENT
+   FUTURE CERTIFICATE CARD
    ========================================================= */
 
-.future-document {
-    border-style: dashed;
+.future-card {
+    margin-top: 25px;
 
-    opacity: .62;
-}
+    min-height: 190px;
 
-.future-document:hover {
-    transform: none;
-
-    border-color:
-        rgba(255,255,255,.12);
+    border:
+        2px dashed #c5d5ec;
 
     background:
-        rgba(255,255,255,.025);
+        rgba(255,255,255,.75);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #6d84a2;
 }
 
-.future-document::before {
-    display: none;
+
+.future-card h3 {
+    font-size: 22px;
+
+    color: #496789;
+
+    margin-bottom: 7px;
 }
 
-.future-document .document-icon {
-    color: #777980;
-}
 
-.future-document .document-body h3 {
-    color: #b0b1b6;
-}
+.future-card p {
+    font-size: 14px;
 
-.future-text {
-    color: #62646b !important;
-
-    max-width: 500px;
-
-    line-height: 1.6;
+    color: #8094ae;
 }
 
 
@@ -640,20 +409,16 @@ body::after {
    FOOTER
    ========================================================= */
 
-.footer {
-    max-width: 1250px;
-
-    margin: auto;
+footer {
+    text-align: center;
 
     padding:
-        0 5%
+        5px 20px
         35px;
 
-    color: #4f5157;
+    color: #7890af;
 
-    font-size: 10px;
-
-    letter-spacing: .6px;
+    font-size: 13px;
 }
 
 
@@ -661,15 +426,16 @@ body::after {
    PDF VIEWER
    ========================================================= */
 
-.viewer {
+.pdf-viewer {
     position: fixed;
 
     inset: 0;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
 
-    background: #08090b;
+    height: 100%;
+
+    background: #101722;
 
     z-index: 99999;
 
@@ -678,17 +444,25 @@ body::after {
     flex-direction: column;
 }
 
-.viewer.active {
+
+.pdf-viewer.active {
     display: flex;
 }
 
-.viewer-header {
-    height: 62px;
 
-    min-height: 62px;
+/* PDF header */
 
-    padding:
-        0 18px 0 22px;
+.pdf-header {
+    height: 64px;
+
+    min-height: 64px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #3032ad,
+            #176de5
+        );
 
     display: flex;
 
@@ -696,71 +470,57 @@ body::after {
 
     justify-content: space-between;
 
-    background: #111214;
+    padding:
+        0 20px 0 25px;
 
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
+    color: white;
 }
 
-.viewer-title {
-    color: #f4f4f5;
 
-    font-size: 14px;
+.pdf-title {
+    font-size: 17px;
 
     font-weight: 700;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-
-    padding-right: 15px;
 }
 
-.close-button {
-    width: 39px;
-    height: 39px;
 
-    min-width: 39px;
+.close-pdf {
+    width: 42px;
 
-    border-radius: 10px;
+    height: 42px;
 
-    border:
-        1px solid rgba(255,255,255,.10);
+    border: none;
 
-    background: #1b1c1f;
+    border-radius: 12px;
 
-    color: #eee;
+    background:
+        rgba(255,255,255,.18);
 
-    font-size: 22px;
+    color: white;
+
+    font-size: 27px;
 
     cursor: pointer;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
 
     transition: .2s ease;
 }
 
-.close-button:hover {
-    background: #ff8500;
 
-    color: #111;
+.close-pdf:hover {
+    background: white;
+
+    color: #253db7;
 }
 
-#pdfViewer {
+
+#pdfFrame {
     width: 100%;
 
-    height: 100%;
-
-    flex: 1;
+    height: calc(100% - 64px);
 
     border: none;
 
-    background: #202020;
+    background: #222;
 }
 
 
@@ -768,29 +528,31 @@ body::after {
    TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-    .wrapper {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-
-        padding-top: 45px;
+    .intro-box h1 {
+        font-size: 50px;
     }
 
-    .intro {
-        position: relative;
-
-        top: auto;
+    .intro-box p {
+        font-size: 24px;
     }
 
-    .intro-description,
-    .profile-box {
-        max-width: 600px;
+    .certificate-card {
+        padding: 30px;
     }
 
-    .intro h1 {
-        font-size: 65px;
+    .certificate-title {
+        font-size: 34px;
+    }
+
+    .certificate-company {
+        font-size: 21px;
+    }
+
+    .view-button {
+        right: 50px;
+        top: 155px;
     }
 }
 
@@ -799,79 +561,140 @@ body::after {
    MOBILE
    ========================================================= */
 
-@media (max-width: 560px) {
+@media (max-width: 700px) {
 
-    .navbar {
-        padding: 19px 20px;
+    .hero {
+        min-height: 245px;
     }
 
-    .nav-right {
-        display: none;
-    }
-
-    .wrapper {
-        padding:
-            38px 20px
-            55px;
-
-        gap: 40px;
-    }
-
-    .intro h1 {
-        font-size: 51px;
-
-        letter-spacing: -3px;
-    }
-
-    .intro-description {
-        font-size: 13px;
-    }
-
-    .documents-header h2 {
+    .hero-title {
         font-size: 23px;
+
+        padding: 0 15px;
     }
 
-    .document {
-        min-height: 180px;
+    .hero-line {
+        width: 145px;
 
-        padding: 20px;
+        height: 7px;
+
+        margin-top: 25px;
     }
 
-    .document-body h3 {
+    .container {
+        width:
+            calc(100% - 24px);
+
+        margin-top: -45px;
+    }
+
+    .intro-box {
+        border-radius: 25px;
+
+        padding:
+            35px 20px;
+    }
+
+    .intro-box h1 {
+        font-size: 39px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .intro-box p {
+        font-size: 19px;
+
+        line-height: 1.45;
+    }
+
+    .certificate-card {
+        border-radius: 25px;
+
+        padding: 25px;
+
+        min-height: auto;
+
+        text-align: center;
+    }
+
+    .certificate-icon {
+        width: 110px;
+
+        height: 110px;
+
+        font-size: 52px;
+
+        margin: 0 auto 0;
+    }
+
+    .certificate-badge {
+        margin-top: 0;
+
+        height: 38px;
+
+        font-size: 14px;
+    }
+
+    .certificate-title {
+        font-size: 28px;
+
+        margin-top: 17px;
+    }
+
+    .certificate-company {
+        font-size: 18px;
+    }
+
+    .certificate-meta {
         font-size: 17px;
     }
 
-    .document-action {
-        right: 20px;
+    .view-button {
+        position: relative;
 
-        bottom: 20px;
+        top: auto;
+
+        right: auto;
+
+        width: 100%;
+
+        min-width: 0;
+
+        margin-top: 28px;
+
+        padding: 17px 20px;
+
+        font-size: 18px;
+
+        border-radius: 17px;
     }
 
-    .view-button {
-        padding:
-            8px 12px;
-
-        font-size: 10px;
+    .future-card {
+        border-radius: 25px;
     }
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   VERY SMALL MOBILE
    ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
 
-    .intro h1 {
-        font-size: 45px;
+    .intro-box h1 {
+        font-size: 33px;
     }
 
-    .profile-box {
-        padding: 16px;
+    .intro-box p {
+        font-size: 17px;
     }
 
-    .document {
-        padding: 17px;
+    .certificate-title {
+        font-size: 24px;
+    }
+
+    .certificate-company {
+        font-size: 16px;
     }
 }
 
@@ -884,267 +707,162 @@ body::after {
 
 
 <!-- =====================================================
-     NAVIGATION
+     BLUE GRADIENT HEADER
      ===================================================== -->
 
-<nav class="navbar">
+<header class="hero">
 
-    <div class="nav-inner">
-
-        <div class="brand">
-
-            <div class="brand-mark">
-                RG
-            </div>
-
-            Rahul Gaikwad
-
-        </div>
-
-        <div class="nav-right">
-            Personal Portfolio
-        </div>
-
+    <div class="hero-title">
+        Certifications &amp; Professional Development
     </div>
 
-</nav>
+    <div class="hero-line"></div>
+
+</header>
 
 
 <!-- =====================================================
      MAIN
      ===================================================== -->
 
-<main class="wrapper">
+<main class="container">
 
 
-    <!-- =================================================
-         LEFT PROFILE
-         ================================================= -->
+    <!-- INTRO -->
 
-    <section class="intro">
-
-        <div class="vertical-line"></div>
-
-        <div class="small-label">
-            Portfolio / 2026
-        </div>
+    <section class="intro-box">
 
         <h1>
-            Rahul
-            <span>Gaikwad.</span>
+            My Certifications
         </h1>
 
-        <p class="intro-description">
-
-            Welcome to my professional document portfolio.
-            Explore my certifications and resume in one
-            simple, modern space.
-
+        <p>
+            A collection of my professional learning achievements
         </p>
-
-
-        <div class="profile-box">
-
-            <div class="profile-avatar">
-                RG
-            </div>
-
-            <div class="profile-info">
-
-                <strong>
-                    Rahul Gaikwad
-                </strong>
-
-                <span>
-                    Certifications & Professional Development
-                </span>
-
-            </div>
-
-        </div>
 
     </section>
 
 
-    <!-- =================================================
-         RIGHT DOCUMENTS
-         ================================================= -->
+    <!-- CERTIFICATES -->
 
-    <section class="documents">
+    <section class="certificates">
 
 
-        <div class="documents-header">
+        <!-- =================================================
+             HTML CERTIFICATE
+             ================================================= -->
+
+        <article class="certificate-card">
+
+
+            <div class="certificate-icon">
+                📜
+            </div>
+
+
+            <div class="certificate-badge">
+                CERTIFICATE
+            </div>
+
+
+            <h2 class="certificate-title">
+                HTML – Certificate of Completion
+            </h2>
+
+
+            <div class="certificate-company">
+                A2Z IT HUB PVT LTD
+            </div>
+
+
+            <div class="certificate-meta">
+                HTML · 17 May 2025
+            </div>
+
+
+            <button
+                class="view-button"
+                onclick="openPDF(
+                    'Rahul-Adinath-Gaikwad-HTML-Certificate.pdf',
+                    'HTML – Certificate of Completion'
+                )">
+
+                View Certificate →
+                
+            </button>
+
+
+        </article>
+
+
+        <!-- =================================================
+             RESUME
+             ================================================= -->
+
+        <article
+            class="certificate-card"
+            style="margin-top:25px;">
+
+            <div class="certificate-icon">
+                📄
+            </div>
+
+
+            <div class="certificate-badge">
+                RESUME
+            </div>
+
+
+            <h2 class="certificate-title">
+                My Resume
+            </h2>
+
+
+            <div class="certificate-company">
+                Rahul Gaikwad
+            </div>
+
+
+            <div class="certificate-meta">
+                Professional Profile
+            </div>
+
+
+            <button
+                class="view-button"
+                onclick="openPDF(
+                    'resume.pdf',
+                    'Rahul Gaikwad – Resume'
+                )">
+
+                View Resume →
+
+            </button>
+
+        </article>
+
+
+        <!-- =================================================
+             FUTURE
+             ================================================= -->
+
+        <article class="certificate-card future-card">
 
             <div>
 
-                <small>
-                    Selected Documents
-                </small>
+                <h3>
+                    More Certifications Coming Soon
+                </h3>
 
-                <h2>
-                    My Work
-                </h2>
+                <p>
+                    Additional professional achievements
+                    will be added here.
+                </p>
 
             </div>
 
-            <div class="document-count">
-                02 DOCUMENTS
-            </div>
+        </article>
 
-        </div>
-
-
-        <div class="document-list">
-
-
-            <!-- =========================================
-                 CERTIFICATE
-                 ========================================= -->
-
-            <article class="document">
-
-                <div class="document-top">
-
-                    <div class="document-number">
-                        01
-                    </div>
-
-                    <div class="document-icon">
-                        🏆
-                    </div>
-
-                </div>
-
-
-                <div class="document-body">
-
-                    <h3>
-                        HTML Certificate
-                    </h3>
-
-                    <p>
-                        A2Z IT HUB PRIVATE LIMITED
-                    </p>
-
-                    <div class="document-date">
-                        17 May 2025
-                    </div>
-
-                </div>
-
-
-                <div class="document-action">
-
-                    <button
-                        class="view-button"
-                        onclick="openPDF(
-                            'Rahul-Adinath-Gaikwad-HTML-Certificate.pdf',
-                            'HTML – Certificate'
-                        )">
-
-                        View
-
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- =========================================
-                 RESUME
-                 ========================================= -->
-
-            <article class="document">
-
-                <div class="document-top">
-
-                    <div class="document-number">
-                        02
-                    </div>
-
-                    <div class="document-icon">
-                        📄
-                    </div>
-
-                </div>
-
-
-                <div class="document-body">
-
-                    <h3>
-                        My Resume
-                    </h3>
-
-                    <p>
-                        Resume / CV
-                    </p>
-
-                    <div class="document-date">
-                        Professional Profile
-                    </div>
-
-                </div>
-
-
-                <div class="document-action">
-
-                    <button
-                        class="view-button"
-                        onclick="openPDF(
-                            'resume.pdf',
-                            'My Resume'
-                        )">
-
-                        View
-
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- =========================================
-                 FUTURE
-                 ========================================= -->
-
-            <article
-                class="document future-document">
-
-                <div class="document-top">
-
-                    <div class="document-number">
-                        03
-                    </div>
-
-                    <div class="document-icon">
-                        +
-                    </div>
-
-                </div>
-
-
-                <div class="document-body">
-
-                    <h3>
-                        More Certifications
-                    </h3>
-
-                    <p class="future-text">
-
-                        New certificates can be added here as
-                        you complete additional courses and
-                        professional programs.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
 
     </section>
 
@@ -1155,9 +873,9 @@ body::after {
      FOOTER
      ===================================================== -->
 
-<footer class="footer">
+<footer>
 
-    © 2026 Rahul Gaikwad · Personal Portfolio
+    © 2026 Rahul Gaikwad · Certifications &amp; Professional Development
 
 </footer>
 
@@ -1167,15 +885,15 @@ body::after {
      ===================================================== -->
 
 <div
-    id="viewer"
-    class="viewer">
+    id="pdfViewer"
+    class="pdf-viewer">
 
 
-    <div class="viewer-header">
+    <div class="pdf-header">
 
         <div
-            id="viewerTitle"
-            class="viewer-title">
+            id="pdfTitle"
+            class="pdf-title">
 
             Document
 
@@ -1183,9 +901,8 @@ body::after {
 
 
         <button
-            class="close-button"
-            onclick="closePDF()"
-            aria-label="Close PDF viewer">
+            class="close-pdf"
+            onclick="closePDF()">
 
             ×
 
@@ -1195,9 +912,9 @@ body::after {
 
 
     <iframe
-        id="pdfViewer"
+        id="pdfFrame"
         src=""
-        title="PDF Viewer">
+        title="PDF Document">
     </iframe>
 
 
@@ -1213,27 +930,20 @@ body::after {
 function openPDF(pdf, title) {
 
     const viewer =
-        document.getElementById("viewer");
-
-    const frame =
         document.getElementById("pdfViewer");
 
+    const frame =
+        document.getElementById("pdfFrame");
+
     const titleElement =
-        document.getElementById("viewerTitle");
+        document.getElementById("pdfTitle");
 
 
-    titleElement.innerText = title;
-
-
-    const pdfURL =
-        new URL(
-            pdf,
-            window.location.href
-        ).href;
+    titleElement.textContent = title;
 
 
     frame.src =
-        pdfURL +
+        pdf +
         "#toolbar=1&navpanes=0&scrollbar=1";
 
 
@@ -1248,10 +958,10 @@ function openPDF(pdf, title) {
 function closePDF() {
 
     const viewer =
-        document.getElementById("viewer");
+        document.getElementById("pdfViewer");
 
     const frame =
-        document.getElementById("pdfViewer");
+        document.getElementById("pdfFrame");
 
 
     viewer.classList.remove("active");
