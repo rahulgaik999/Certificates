@@ -20,7 +20,7 @@
             min-height: 100vh;
         }
 
-        /* Header */
+        /* HEADER */
         header {
             background: linear-gradient(135deg, #111827, #1e3a8a);
             color: white;
@@ -38,7 +38,7 @@
             color: #dbeafe;
         }
 
-        /* Main */
+        /* MAIN */
         .container {
             max-width: 950px;
             margin: 50px auto;
@@ -59,72 +59,136 @@
             color: #6b7280;
         }
 
-        /* Certificate Card */
-        .certificate-card {
+        /* CERTIFICATE CARD */
+        .certificate {
             background: white;
-            border-radius: 18px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
             overflow: hidden;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        /* CLICKABLE TITLE */
+        .certificate summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 25px 30px;
             display: flex;
-            flex-direction: column;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        .certificate-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+        .certificate summary::-webkit-details-marker {
+            display: none;
         }
 
+        .certificate summary:hover {
+            background: #f8fafc;
+        }
+
+        .summary-content h3 {
+            font-size: 21px;
+            color: #172554;
+            margin-bottom: 7px;
+        }
+
+        .summary-content p {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .arrow {
+            font-size: 22px;
+            color: #2563eb;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* EXPANDED CONTENT */
+        .certificate-content {
+            border-top: 1px solid #e5e7eb;
+            padding: 30px;
+        }
+
+        .certificate-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        /* PDF PREVIEW */
         .certificate-preview {
-            background: #eef2ff;
-            padding: 30px;
-            text-align: center;
+            width: 280px;
+            min-width: 280px;
+            height: 200px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #f8fafc;
         }
 
-        .certificate-preview span {
-            font-size: 65px;
+        .certificate-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
+        /* INFORMATION */
         .certificate-info {
-            padding: 30px;
+            flex: 1;
         }
 
-        .certificate-info h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
+        .certificate-info h4 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #172554;
         }
 
         .issuer {
             color: #2563eb;
             font-weight: bold;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .details {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 25px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .detail {
-            background: #f9fafb;
+            background: #f8fafc;
             padding: 12px 16px;
             border-radius: 10px;
+            border: 1px solid #e5e7eb;
         }
 
         .detail strong {
             display: block;
-            font-size: 12px;
+            font-size: 11px;
             color: #6b7280;
             margin-bottom: 4px;
+            text-transform: uppercase;
         }
 
         .detail span {
             font-weight: bold;
+            color: #1f2937;
         }
 
-        /* Button */
+        .description {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        /* BUTTON */
         .button {
             display: inline-block;
             background: #2563eb;
@@ -140,7 +204,7 @@
             background: #1d4ed8;
         }
 
-        /* Footer */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -148,8 +212,13 @@
             font-size: 14px;
         }
 
-        /* Mobile */
-        @media (max-width: 600px) {
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            header {
+                padding: 40px 20px;
+            }
+
             header h1 {
                 font-size: 28px;
             }
@@ -158,11 +227,29 @@
                 margin: 35px auto;
             }
 
-            .certificate-info {
-                padding: 22px;
+            .certificate summary {
+                padding: 20px;
             }
 
-            .certificate-info h3 {
+            .summary-content h3 {
+                font-size: 18px;
+            }
+
+            .certificate-content {
+                padding: 20px;
+            }
+
+            .certificate-layout {
+                flex-direction: column;
+            }
+
+            .certificate-preview {
+                width: 100%;
+                min-width: 100%;
+                height: 220px;
+            }
+
+            .certificate-info h4 {
                 font-size: 21px;
             }
         }
@@ -176,6 +263,7 @@
         <p>Certifications & Professional Development</p>
     </header>
 
+
     <main class="container">
 
         <div class="section-title">
@@ -183,46 +271,162 @@
             <p>A collection of my professional learning achievements</p>
         </div>
 
-        <div class="certificate-card">
 
-            <div class="certificate-preview">
-                <span>🏆</span>
-            </div>
+        <!-- CERTIFICATE 1 -->
+        <details class="certificate" open>
 
-            <div class="certificate-info">
+            <summary>
 
-                <h3>HTML – Certificate of Completion</h3>
-
-                <div class="issuer">
-                    A2Z IT HUB PVT LTD
+                <div class="summary-content">
+                    <h3>HTML – Certificate of Completion</h3>
+                    <p>A2Z IT HUB PVT LTD</p>
                 </div>
 
-                <div class="details">
+                <span class="arrow">⌄</span>
 
-                    <div class="detail">
-                        <strong>COURSE</strong>
-                        <span>HTML</span>
+            </summary>
+
+
+            <div class="certificate-content">
+
+                <div class="certificate-layout">
+
+                    <!-- Certificate Preview -->
+                    <div class="certificate-preview">
+
+                        <iframe
+                            src="Rahul-Adinath-Gaikwad-HTML-Certificate.pdf#toolbar=0&navpanes=0">
+                        </iframe>
+
                     </div>
 
-                    <div class="detail">
-                        <strong>ISSUED</strong>
-                        <span>17 May 2025</span>
+
+                    <!-- Certificate Information -->
+                    <div class="certificate-info">
+
+                        <h4>HTML – Certificate of Completion</h4>
+
+                        <div class="issuer">
+                            A2Z IT HUB PVT LTD
+                        </div>
+
+
+                        <div class="details">
+
+                            <div class="detail">
+                                <strong>Course</strong>
+                                <span>HTML</span>
+                            </div>
+
+                            <div class="detail">
+                                <strong>Issued</strong>
+                                <span>17 May 2025</span>
+                            </div>
+
+                        </div>
+
+
+                        <p class="description">
+                            Successfully completed the HTML course and gained
+                            knowledge of HTML and web development fundamentals.
+                        </p>
+
+
+                        <a
+                            class="button"
+                            href="Rahul-Adinath-Gaikwad-HTML-Certificate.pdf"
+                            target="_blank">
+
+                            View Certificate →
+
+                        </a>
+
                     </div>
 
                 </div>
 
-                <a
-                    class="button"
-                    href="Rahul-Adinath-Gaikwad-HTML-Certificate.pdf"
-                    target="_blank">
-                    View Certificate →
-                </a>
+            </div>
+
+        </details>
+
+
+        <!--
+        ==================================================
+        FUTURE CERTIFICATE TEMPLATE
+        Copy the block below whenever you add a new certificate.
+        ==================================================
+
+        <details class="certificate">
+
+            <summary>
+
+                <div class="summary-content">
+                    <h3>YOUR COURSE – Certificate of Completion</h3>
+                    <p>YOUR ISSUING ORGANIZATION</p>
+                </div>
+
+                <span class="arrow">⌄</span>
+
+            </summary>
+
+            <div class="certificate-content">
+
+                <div class="certificate-layout">
+
+                    <div class="certificate-preview">
+                        <iframe
+                            src="YOUR-CERTIFICATE.pdf#toolbar=0&navpanes=0">
+                        </iframe>
+                    </div>
+
+                    <div class="certificate-info">
+
+                        <h4>YOUR COURSE – Certificate of Completion</h4>
+
+                        <div class="issuer">
+                            YOUR ISSUING ORGANIZATION
+                        </div>
+
+                        <div class="details">
+
+                            <div class="detail">
+                                <strong>Course</strong>
+                                <span>YOUR COURSE</span>
+                            </div>
+
+                            <div class="detail">
+                                <strong>Issued</strong>
+                                <span>DATE</span>
+                            </div>
+
+                        </div>
+
+                        <p class="description">
+                            Brief description of your certificate.
+                        </p>
+
+                        <a
+                            class="button"
+                            href="YOUR-CERTIFICATE.pdf"
+                            target="_blank">
+
+                            View Certificate →
+
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
+        </details>
+
+        -->
+
 
     </main>
+
 
     <footer>
         © 2025 Rahul Adinath Gaikwad · Certificate Portfolio
