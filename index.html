@@ -7,7 +7,10 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Rahul Adinath Gaikwad | Certificates</title>
+    <meta name="description"
+          content="Rahul Adinath Gaikwad - Certificates and Professional Portfolio">
+
+    <title>Rahul Gaikwad | Certificates</title>
 
     <style>
 
@@ -16,104 +19,225 @@
         ========================= */
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        html,
-        body {
-            width: 100%;
-            overflow-x: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #eef4ff;
-            color: #102a56;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(16, 185, 129, 0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(6, 182, 212, 0.10),
+                    transparent 30%
+                ),
+                #07110f;
+
+            color: #f1f5f9;
+
+            min-height: 100vh;
         }
 
 
         /* =========================
-           HEADER
+           TOP NAVIGATION
         ========================= */
 
-        header {
+        .navbar {
             width: 100%;
-            padding: 24px 20px 58px;
+
+            padding: 18px 24px;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.07);
+
+            background:
+                rgba(7, 17, 15, 0.80);
+
+            backdrop-filter: blur(16px);
+
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-inner {
+            width: min(920px, calc(100% - 20px));
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            color: #ffffff;
+        }
+
+        .brand-dot {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: #10b981;
+
+            box-shadow:
+                0 0 14px rgba(16, 185, 129, 0.8);
+        }
+
+        .nav-text {
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            width: min(920px, calc(100% - 32px));
+
+            margin: 42px auto 0;
+
             text-align: center;
-            color: white;
+        }
+
+        .profile-icon {
+            width: 66px;
+            height: 66px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 28px;
 
             background:
                 linear-gradient(
                     135deg,
-                    #3d2bb3,
-                    #1268e8
+                    #10b981,
+                    #06b6d4
                 );
+
+            box-shadow:
+                0 12px 35px
+                rgba(16, 185, 129, 0.18);
         }
 
-        header h1 {
-            font-size: clamp(23px, 3vw, 34px);
-            line-height: 1.15;
-            font-weight: 700;
-            margin-bottom: 7px;
+        .hero h1 {
+            font-size: clamp(30px, 4vw, 46px);
+
+            line-height: 1.1;
+
+            font-weight: 800;
+
+            letter-spacing: -1.5px;
+
+            color: #ffffff;
         }
 
-        header p {
-            font-size: clamp(14px, 1.5vw, 17px);
-            line-height: 1.3;
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #34d399,
+                    #22d3ee
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
         }
 
-        .header-line {
-            width: 105px;
-            height: 4px;
-            background: #4db7ff;
-            border-radius: 20px;
-            margin: 15px auto 0;
+        .hero p {
+            margin: 14px auto 0;
+
+            max-width: 580px;
+
+            color: #94a3b8;
+
+            font-size: 15px;
+
+            line-height: 1.7;
         }
 
 
         /* =========================
-           MAIN
+           MAIN CONTENT
         ========================= */
 
         .container {
             width: min(820px, calc(100% - 32px));
-            margin: -34px auto 32px;
+
+            margin: 38px auto 60px;
         }
 
 
         /* =========================
-           INTRO
+           SECTION HEADER
         ========================= */
 
-        .intro {
-            background: #ffffff;
+        .section-header {
+            display: flex;
 
-            border-radius: 20px;
+            align-items: end;
 
-            padding: 22px 20px;
+            justify-content: space-between;
 
-            text-align: center;
-
-            box-shadow:
-                0 8px 24px
-                rgba(35, 75, 140, 0.09);
-
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
 
-        .intro h2 {
-            font-size: clamp(24px, 3vw, 32px);
-            line-height: 1.15;
-            font-weight: 700;
-            margin-bottom: 7px;
+        .section-header h2 {
+            font-size: 21px;
+
+            font-weight: 750;
+
+            color: #f8fafc;
         }
 
-        .intro p {
+        .section-header span {
             color: #64748b;
-            font-size: clamp(14px, 1.5vw, 17px);
-            line-height: 1.4;
+
+            font-size: 12px;
         }
 
 
@@ -123,41 +247,71 @@
 
         .cards {
             display: flex;
+
             flex-direction: column;
-            gap: 14px;
+
+            gap: 12px;
         }
 
-        .certificate-card {
-            width: 100%;
+        .card {
+            position: relative;
 
-            background: #ffffff;
-
-            border-radius: 18px;
-
-            padding: 17px 20px;
-
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1fr)
-                auto;
+            display: flex;
 
             align-items: center;
 
-            gap: 18px;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 18px 20px;
+
+            border-radius: 18px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.025)
+                );
 
             box-shadow:
-                0 8px 24px
-                rgba(35, 75, 140, 0.09);
+                0 15px 40px
+                rgba(0, 0, 0, 0.16);
+
+            backdrop-filter: blur(12px);
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+
+            border-color:
+                rgba(52, 211, 153, 0.28);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(16,185,129,0.08),
+                    rgba(255,255,255,0.035)
+                );
         }
 
 
         /* =========================
-           CARD TOP
+           CARD LEFT
         ========================= */
 
-        .card-top {
+        .card-left {
             display: flex;
+
             align-items: center;
 
             gap: 15px;
@@ -165,156 +319,151 @@
             min-width: 0;
         }
 
-
-        /* =========================
-           ICON
-        ========================= */
-
         .card-icon {
-            width: 64px;
-            min-width: 64px;
+            width: 56px;
+            min-width: 56px;
 
-            height: 64px;
+            height: 56px;
 
-            border-radius: 16px;
+            border-radius: 15px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            font-size: 29px;
+            font-size: 24px;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #2859e8,
-                    #5438e8
-                );
+                rgba(16, 185, 129, 0.10);
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.18);
         }
 
-        .resume-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #00a878,
-                    #05b99c
-                );
-        }
-
-
-        /* =========================
-           TEXT
-        ========================= */
-
-        .certificate-info {
+        .card-content {
             min-width: 0;
         }
 
-        .badge {
-            display: inline-block;
+        .card-content h3 {
+            color: #f8fafc;
 
-            padding: 5px 11px;
-
-            margin-bottom: 5px;
-
-            border-radius: 30px;
-
-            background: #dcecff;
-
-            color: #0864d9;
-
-            font-size: 10px;
+            font-size: 17px;
 
             font-weight: 700;
 
-            letter-spacing: 0.4px;
-        }
-
-        .badge.document {
-            background: #d4faed;
-            color: #087d61;
-        }
-
-        .certificate-info h3 {
-            font-size: clamp(18px, 2vw, 22px);
-
-            line-height: 1.2;
-
-            font-weight: 700;
+            line-height: 1.3;
 
             margin-bottom: 5px;
         }
 
         .issuer {
-            color: #0864d9;
+            color: #94a3b8;
 
             font-size: 13px;
-
-            line-height: 1.3;
-
-            font-weight: 700;
 
             margin-bottom: 3px;
         }
 
-        .certificate-date {
+        .date {
             color: #64748b;
 
             font-size: 12px;
-
-            line-height: 1.3;
         }
 
 
         /* =========================
-           BUTTON
+           VIEW BUTTON
         ========================= */
 
         .view-button {
             border: none;
 
-            cursor: pointer;
+            padding: 11px 16px;
 
-            width: 155px;
+            min-width: 145px;
 
-            padding: 12px 14px;
-
-            border-radius: 13px;
-
-            color: white;
+            border-radius: 10px;
 
             background:
                 linear-gradient(
                     135deg,
-                    #1268e8,
-                    #5239e9
+                    #10b981,
+                    #0891b2
                 );
+
+            color: white;
 
             font-size: 13px;
 
             font-weight: 700;
 
-            white-space: nowrap;
-
-            box-shadow:
-                0 6px 14px
-                rgba(40, 80, 220, 0.16);
+            cursor: pointer;
 
             transition:
                 transform 0.2s ease,
-                box-shadow 0.2s ease;
+                box-shadow 0.2s ease,
+                opacity 0.2s ease;
         }
 
         .view-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-1px);
 
             box-shadow:
-                0 9px 18px
-                rgba(40, 80, 220, 0.22);
+                0 8px 22px
+                rgba(16, 185, 129, 0.20);
         }
 
         .view-button:active {
-            transform: translateY(0);
+            transform: scale(0.98);
+        }
+
+
+        /* =========================
+           EMPTY / FUTURE CARD
+        ========================= */
+
+        .future-card {
+            border-style: dashed;
+
+            border-color:
+                rgba(255,255,255,0.10);
+
+            opacity: 0.65;
+        }
+
+        .future-card:hover {
+            transform: none;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border-color:
+                rgba(255,255,255,0.10);
+        }
+
+        .future-text {
+            color: #64748b;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 0 20px 35px;
+
+            color: #475569;
+
+            font-size: 12px;
         }
 
 
@@ -330,7 +479,7 @@
             width: 100vw;
             height: 100vh;
 
-            background: #111827;
+            background: #080c0b;
 
             z-index: 99999;
 
@@ -343,17 +492,10 @@
             display: flex;
         }
 
-
-        /* =========================
-           VIEWER HEADER
-        ========================= */
-
         .viewer-header {
-            height: 56px;
+            height: 60px;
 
-            min-height: 56px;
-
-            background: #0b1b32;
+            min-height: 60px;
 
             display: flex;
 
@@ -361,54 +503,59 @@
 
             justify-content: space-between;
 
-            padding: 0 14px 0 18px;
+            padding:
+                0 16px 0 20px;
 
-            color: white;
+            background: #0d1513;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
         }
 
         .viewer-title {
-            font-size: 16px;
+            color: #f8fafc;
 
-            font-weight: 700;
+            font-size: 15px;
+
+            font-weight: 650;
 
             overflow: hidden;
 
             text-overflow: ellipsis;
 
             white-space: nowrap;
+
+            padding-right: 15px;
         }
 
-
-        /* =========================
-           NEW CLOSE BUTTON
-        ========================= */
-
         .close-button {
-            width: 38px;
+            width: 40px;
+            height: 40px;
 
-            height: 38px;
-
-            border: 1px solid
-                rgba(255, 255, 255, 0.20);
+            min-width: 40px;
 
             border-radius: 50%;
 
-            background: #1e293b;
+            border:
+                1px solid
+                rgba(255,255,255,0.14);
 
-            color: #ffffff;
+            background: #18221f;
 
-            font-size: 23px;
+            color: #e2e8f0;
 
-            font-weight: 400;
+            font-size: 24px;
 
             line-height: 1;
+
+            font-weight: 300;
 
             cursor: pointer;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             transition:
@@ -417,50 +564,21 @@
         }
 
         .close-button:hover {
-            background: #334155;
+            background: #26332f;
 
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
-
-        .close-button:active {
-            transform: scale(0.95);
-        }
-
-
-        /* =========================
-           PDF FRAME
-        ========================= */
 
         #pdfViewer {
             width: 100%;
+
+            height: 100%;
 
             flex: 1;
 
             border: none;
 
-            background: #202228;
-        }
-
-
-        /* =========================
-           TABLET
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .container {
-                width: calc(100% - 26px);
-            }
-
-            .certificate-card {
-                grid-template-columns: 1fr;
-
-                gap: 13px;
-            }
-
-            .view-button {
-                width: 100%;
-            }
+            background: #202423;
         }
 
 
@@ -468,145 +586,151 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
 
-            header {
-                padding: 22px 14px 54px;
+            .navbar {
+                padding: 15px 16px;
             }
 
-            header h1 {
+            .nav-inner {
+                width: 100%;
+            }
+
+            .nav-text {
+                display: none;
+            }
+
+            .hero {
+                width: calc(100% - 28px);
+
+                margin-top: 30px;
+            }
+
+            .profile-icon {
+                width: 56px;
+                height: 56px;
+
+                border-radius: 17px;
+
                 font-size: 23px;
+
+                margin-bottom: 15px;
             }
 
-            header p {
-                font-size: 14px;
+            .hero h1 {
+                font-size: 30px;
+
+                letter-spacing: -0.8px;
             }
 
-            .header-line {
-                width: 90px;
+            .hero p {
+                font-size: 13px;
 
-                height: 4px;
+                line-height: 1.6;
 
-                margin-top: 13px;
+                margin-top: 11px;
             }
-
 
             .container {
-                width: calc(100% - 18px);
+                width: calc(100% - 28px);
 
-                margin-top: -31px;
+                margin-top: 30px;
+
+                margin-bottom: 45px;
             }
 
-
-            .intro {
-                padding: 20px 14px;
-
-                border-radius: 18px;
-
-                margin-bottom: 14px;
+            .section-header {
+                margin-bottom: 11px;
             }
 
-            .intro h2 {
-                font-size: 24px;
+            .section-header h2 {
+                font-size: 18px;
             }
 
-            .intro p {
-                font-size: 14px;
+            .section-header span {
+                font-size: 11px;
             }
 
-
-            .cards {
-                gap: 12px;
-            }
-
-
-            .certificate-card {
-                padding: 16px 14px;
-
-                border-radius: 18px;
+            .card {
+                padding: 15px;
 
                 gap: 13px;
-            }
 
-
-            .card-top {
-                gap: 12px;
+                border-radius: 16px;
 
                 align-items: flex-start;
             }
 
+            .card-left {
+                gap: 11px;
+
+                flex: 1;
+
+                min-width: 0;
+            }
 
             .card-icon {
-                width: 56px;
+                width: 46px;
+                min-width: 46px;
 
-                min-width: 56px;
+                height: 46px;
 
-                height: 56px;
+                border-radius: 12px;
 
-                border-radius: 14px;
-
-                font-size: 26px;
+                font-size: 20px;
             }
 
+            .card-content h3 {
+                font-size: 14px;
 
-            .badge {
-                font-size: 9px;
-
-                padding: 4px 9px;
-
-                margin-bottom: 5px;
+                margin-bottom: 4px;
             }
-
-
-            .certificate-info h3 {
-                font-size: 18px;
-
-                line-height: 1.2;
-            }
-
 
             .issuer {
-                font-size: 12px;
+                font-size: 11px;
+
+                line-height: 1.4;
             }
 
+            .date {
+                font-size: 10px;
+            }
 
-            .certificate-date {
+            .view-button {
+                min-width: 0;
+
+                padding: 9px 11px;
+
+                font-size: 11px;
+
+                border-radius: 8px;
+
+                white-space: nowrap;
+            }
+
+            .future-text {
                 font-size: 11px;
             }
 
-
-            .view-button {
-                width: 100%;
-
-                padding: 11px;
-
-                font-size: 13px;
-
-                border-radius: 12px;
-            }
-
-
             .viewer-header {
-                height: 52px;
+                height: 56px;
 
-                min-height: 52px;
+                min-height: 56px;
 
-                padding:
-                    0 10px 0 14px;
+                padding-left: 15px;
             }
-
 
             .viewer-title {
                 font-size: 14px;
             }
 
-
             .close-button {
-                width: 36px;
+                width: 38px;
+                height: 38px;
 
-                height: 36px;
+                min-width: 38px;
 
-                font-size: 21px;
+                font-size: 22px;
             }
         }
 
@@ -615,31 +739,36 @@
            VERY SMALL PHONES
         ========================= */
 
-        @media (max-width: 380px) {
+        @media (max-width: 400px) {
 
-            .card-top {
-                gap: 10px;
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .hero p {
+                font-size: 12px;
+            }
+
+            .card {
+                padding: 13px;
             }
 
             .card-icon {
-                width: 52px;
+                width: 42px;
+                min-width: 42px;
 
-                min-width: 52px;
+                height: 42px;
 
-                height: 52px;
-
-                font-size: 24px;
+                font-size: 18px;
             }
 
-            .certificate-info h3 {
-                font-size: 16px;
+            .card-content h3 {
+                font-size: 13px;
             }
 
-            .issuer {
-                font-size: 11px;
-            }
+            .view-button {
+                padding: 8px 9px;
 
-            .certificate-date {
                 font-size: 10px;
             }
         }
@@ -652,22 +781,50 @@
 
 
     <!-- =========================
-         HEADER
+         NAVIGATION
     ========================= -->
 
-    <header>
+    <nav class="navbar">
+
+        <div class="nav-inner">
+
+            <div class="brand">
+
+                <div class="brand-dot"></div>
+
+                Rahul Gaikwad
+
+            </div>
+
+            <div class="nav-text">
+                Certificate Portfolio
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="profile-icon">
+            📄
+        </div>
 
         <h1>
-            Rahul Adinath Gaikwad
+            Rahul <span>Gaikwad</span>
         </h1>
 
         <p>
-            Certifications &amp; Professional Development
+            Certifications & Professional Development
         </p>
 
-        <div class="header-line"></div>
-
-    </header>
+    </section>
 
 
 
@@ -678,59 +835,47 @@
     <main class="container">
 
 
-        <!-- INTRO -->
-
-        <section class="intro">
+        <div class="section-header">
 
             <h2>
-                My Certifications
+                My Documents
             </h2>
 
-            <p>
-                A collection of my professional
-                learning achievements
-            </p>
+            <span>
+                2 documents
+            </span>
 
-        </section>
-
+        </div>
 
 
-        <!-- =========================
-             CARDS
-        ========================= -->
 
-        <section class="cards">
+        <div class="cards">
 
 
-            <!-- =========================
-                 HTML CERTIFICATE
-            ========================= -->
+            <!-- =====================
+                 CERTIFICATE
+            ====================== -->
 
-            <div class="certificate-card">
+            <div class="card">
 
-                <div class="card-top">
+                <div class="card-left">
 
                     <div class="card-icon">
-                        📜
+                        🏆
                     </div>
 
-
-                    <div class="certificate-info">
-
-                        <span class="badge">
-                            CERTIFICATE
-                        </span>
+                    <div class="card-content">
 
                         <h3>
-                            HTML – Certificate of Completion
+                            HTML Certificate
                         </h3>
 
                         <div class="issuer">
-                            A2Z IT HUB PVT LTD
+                            A2Z IT HUB PRIVATE LIMITED
                         </div>
 
-                        <div class="certificate-date">
-                            HTML · 17 May 2025
+                        <div class="date">
+                            17 May 2025
                         </div>
 
                     </div>
@@ -745,7 +890,7 @@
                         'HTML – Certificate'
                     )">
 
-                    View Certificate →
+                    View Certificate
 
                 </button>
 
@@ -753,35 +898,30 @@
 
 
 
-            <!-- =========================
+            <!-- =====================
                  RESUME
-            ========================= -->
+            ====================== -->
 
-            <div class="certificate-card">
+            <div class="card">
 
-                <div class="card-top">
+                <div class="card-left">
 
-                    <div class="card-icon resume-icon">
-                        📄
+                    <div class="card-icon">
+                        📑
                     </div>
 
-
-                    <div class="certificate-info">
-
-                        <span class="badge document">
-                            DOCUMENT
-                        </span>
+                    <div class="card-content">
 
                         <h3>
                             My Resume
                         </h3>
 
                         <div class="issuer">
-                            Resume
+                            Resume / CV
                         </div>
 
-                        <div class="certificate-date">
-                            Updated Resume
+                        <div class="date">
+                            Professional Profile
                         </div>
 
                     </div>
@@ -796,21 +936,64 @@
                         'My Resume'
                     )">
 
-                    View Resume →
+                    View Resume
 
                 </button>
 
             </div>
 
 
-        </section>
+
+            <!-- =====================
+                 FUTURE CERTIFICATE
+            ====================== -->
+
+            <div class="card future-card">
+
+                <div class="card-left">
+
+                    <div class="card-icon">
+                        ＋
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            More Certifications
+                        </h3>
+
+                        <div class="future-text">
+                            New certificates can be added here as you
+                            complete more courses.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
 
     </main>
 
 
 
     <!-- =========================
-         PDF VIEWER
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        © 2026 Rahul Gaikwad · Certificate Portfolio
+
+    </footer>
+
+
+
+    <!-- =========================
+         FULL SCREEN PDF VIEWER
     ========================= -->
 
     <div
@@ -819,7 +1002,6 @@
 
 
         <div class="viewer-header">
-
 
             <div
                 id="viewerTitle"
@@ -859,25 +1041,24 @@
 
     <script>
 
-
-        /* =========================
-           OPEN PDF
-        ========================= */
-
         function openPDF(pdf, title) {
 
+            const viewer =
+                document.getElementById("viewer");
+
+            const frame =
+                document.getElementById("pdfViewer");
+
+            const titleElement =
+                document.getElementById("viewerTitle");
+
+
+            titleElement.innerText = title;
+
+
             /*
-             * Show document title
-             */
-
-            document.getElementById(
-                "viewerTitle"
-            ).innerText = title;
-
-
-            /*
-             * Create the full GitHub
-             * Pages URL for the PDF.
+             * Creates the correct full URL
+             * for the PDF inside GitHub Pages.
              */
 
             const pdfURL =
@@ -888,40 +1069,16 @@
 
 
             /*
-             * Google Docs embedded viewer.
-             *
-             * This is used because some
-             * Android browsers do not
-             * display PDFs properly
-             * inside an iframe.
+             * Open PDF directly.
              */
 
-            const viewerURL =
-                "https://docs.google.com/gview?embedded=1&url="
-                + encodeURIComponent(pdfURL);
+            frame.src =
+                pdfURL +
+                "#toolbar=1&navpanes=0&scrollbar=1";
 
 
-            /*
-             * Load PDF viewer
-             */
+            viewer.classList.add("active");
 
-            document.getElementById(
-                "pdfViewer"
-            ).src = viewerURL;
-
-
-            /*
-             * Show full-screen viewer
-             */
-
-            document.getElementById(
-                "viewer"
-            ).classList.add("active");
-
-
-            /*
-             * Prevent background scrolling
-             */
 
             document.body.style.overflow =
                 "hidden";
@@ -929,33 +1086,20 @@
 
 
 
-        /* =========================
-           CLOSE PDF
-        ========================= */
-
         function closePDF() {
 
-            /*
-             * Hide viewer
-             */
+            const viewer =
+                document.getElementById("viewer");
 
-            document.getElementById(
-                "viewer"
-            ).classList.remove("active");
+            const frame =
+                document.getElementById("pdfViewer");
 
 
-            /*
-             * Clear iframe
-             */
-
-            document.getElementById(
-                "pdfViewer"
-            ).src = "";
+            viewer.classList.remove("active");
 
 
-            /*
-             * Allow page scrolling again
-             */
+            frame.src = "";
+
 
             document.body.style.overflow =
                 "auto";
@@ -963,9 +1107,9 @@
 
 
 
-        /* =========================
-           ESC KEY
-        ========================= */
+        /*
+         * ESC key closes the PDF viewer.
+         */
 
         document.addEventListener(
             "keydown",
@@ -979,7 +1123,6 @@
 
             }
         );
-
 
     </script>
 
