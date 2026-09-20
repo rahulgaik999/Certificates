@@ -9,18 +9,14 @@
 <title>Rahul Adinath Gaikwad | Certificates</title>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
+html,
+body {
     width: 100%;
     overflow-x: hidden;
 }
@@ -29,8 +25,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #eef4ff;
     color: #102a56;
-    width: 100%;
-    overflow-x: hidden;
 }
 
 
@@ -40,44 +34,40 @@ body {
 
 header {
     width: 100%;
-    padding: 45px 20px 90px;
+    padding: 38px 20px 85px;
     text-align: center;
     color: white;
-
-    background:
-        linear-gradient(135deg, #3928a8, #1268e8);
-
-    position: relative;
+    background: linear-gradient(135deg, #3d2bb3, #1268e8);
 }
 
 header h1 {
-    font-size: clamp(28px, 7vw, 48px);
-    font-weight: 800;
+    font-size: clamp(26px, 4vw, 44px);
+    line-height: 1.15;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: clamp(16px, 4vw, 24px);
-    opacity: 0.95;
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.3;
 }
 
 .header-line {
-    width: 150px;
+    width: 145px;
     height: 6px;
     background: #4db7ff;
     border-radius: 20px;
-    margin: 25px auto 0;
+    margin: 24px auto 0;
 }
 
 
 /* =========================
-   MAIN
+   MAIN CONTAINER
 ========================= */
 
 .container {
-    width: min(900px, calc(100% - 28px));
-    margin: -55px auto 50px;
-    position: relative;
+    width: min(1050px, calc(100% - 40px));
+    margin: -48px auto 50px;
 }
 
 
@@ -86,24 +76,24 @@ header p {
 ========================= */
 
 .intro {
-    background: white;
+    background: #ffffff;
     border-radius: 28px;
     padding: 38px 25px;
     text-align: center;
-
-    box-shadow: 0 15px 45px rgba(35, 75, 140, 0.12);
-
+    box-shadow: 0 12px 35px rgba(35, 75, 140, 0.12);
     margin-bottom: 30px;
 }
 
 .intro h2 {
-    font-size: clamp(30px, 8vw, 48px);
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.15;
+    font-weight: 700;
     margin-bottom: 12px;
 }
 
 .intro p {
-    color: #65758b;
-    font-size: clamp(17px, 4.5vw, 24px);
+    color: #64748b;
+    font-size: clamp(17px, 2vw, 23px);
     line-height: 1.4;
 }
 
@@ -115,66 +105,78 @@ header p {
 .cards {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 22px;
 }
 
 .certificate-card {
     width: 100%;
-    background: white;
-    border-radius: 28px;
-    padding: 28px;
+    background: #ffffff;
+    border-radius: 26px;
+    padding: 26px 30px;
 
-    box-shadow: 0 15px 45px rgba(35, 75, 140, 0.12);
-
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
+
+    box-shadow: 0 12px 35px rgba(35, 75, 140, 0.12);
 }
 
 
-/* ICON */
+/* =========================
+   CARD LEFT SIDE
+========================= */
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    min-width: 0;
+}
 
 .card-icon {
-    width: 105px;
-    min-width: 105px;
-    height: 105px;
+    width: 95px;
+    min-width: 95px;
+    height: 95px;
 
-    border-radius: 25px;
+    border-radius: 22px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 48px;
+    font-size: 44px;
 
-    background: linear-gradient(135deg, #245bea, #5138e8);
+    background: linear-gradient(135deg, #2859e8, #5438e8);
 }
 
 .resume-icon {
-    background: linear-gradient(135deg, #00a878, #04b99c);
+    background: linear-gradient(135deg, #00a878, #05b99c);
 }
 
 
-/* INFORMATION */
+/* =========================
+   TEXT
+========================= */
 
 .certificate-info {
-    flex: 1;
     min-width: 0;
 }
 
 .badge {
     display: inline-block;
 
-    padding: 8px 18px;
+    padding: 7px 16px;
+    margin-bottom: 10px;
+
     border-radius: 30px;
 
     background: #dcecff;
     color: #0864d9;
 
+    font-size: 13px;
     font-weight: 700;
-    font-size: 14px;
-
-    margin-bottom: 12px;
+    letter-spacing: 0.5px;
 }
 
 .badge.document {
@@ -183,21 +185,24 @@ header p {
 }
 
 .certificate-info h3 {
-    font-size: clamp(24px, 5vw, 32px);
+    font-size: clamp(22px, 2.5vw, 30px);
     line-height: 1.2;
-    margin-bottom: 12px;
+    font-weight: 700;
+    margin-bottom: 9px;
 }
 
 .issuer {
     color: #0864d9;
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 1.3;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .certificate-date {
-    color: #65758b;
-    font-size: 17px;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.3;
 }
 
 
@@ -209,21 +214,23 @@ header p {
     border: none;
     cursor: pointer;
 
-    min-width: 190px;
+    width: 205px;
 
-    padding: 17px 24px;
+    padding: 16px 20px;
 
-    border-radius: 18px;
+    border-radius: 17px;
 
     color: white;
-    font-size: 17px;
-    font-weight: 700;
-
     background: linear-gradient(135deg, #1268e8, #5239e9);
 
-    box-shadow: 0 10px 25px rgba(40, 80, 220, 0.22);
+    font-size: 16px;
+    font-weight: 700;
 
-    transition: 0.2s;
+    white-space: nowrap;
+
+    box-shadow: 0 9px 22px rgba(40, 80, 220, 0.20);
+
+    transition: transform 0.2s ease;
 }
 
 .view-button:hover {
@@ -237,7 +244,6 @@ header p {
 
 .viewer {
     position: fixed;
-
     inset: 0;
 
     width: 100vw;
@@ -248,7 +254,6 @@ header p {
     z-index: 99999;
 
     display: none;
-
     flex-direction: column;
 }
 
@@ -256,32 +261,29 @@ header p {
     display: flex;
 }
 
-
-/* VIEWER HEADER */
-
 .viewer-header {
-    height: 70px;
-    min-height: 70px;
+    height: 68px;
+    min-height: 68px;
 
     background: #0b1b32;
-
-    color: white;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 20px;
+    padding: 0 18px;
+
+    color: white;
 }
 
 .viewer-title {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
 }
 
 .close-button {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
 
     border: none;
     border-radius: 50%;
@@ -289,20 +291,15 @@ header p {
     background: #ff3040;
     color: white;
 
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1;
 
     cursor: pointer;
 }
 
-
-/* PDF AREA */
-
 #pdfViewer {
-    flex: 1;
-
     width: 100%;
-    height: calc(100vh - 70px);
+    flex: 1;
 
     border: none;
 
@@ -311,23 +308,62 @@ header p {
 
 
 /* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .certificate-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .view-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
     header {
-        padding: 30px 16px 75px;
+        padding: 28px 16px 70px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
     }
 
     .container {
         width: calc(100% - 20px);
-        margin-top: -45px;
+        margin-top: -42px;
     }
 
     .intro {
-        padding: 30px 18px;
-        border-radius: 24px;
+        padding: 28px 18px;
+        border-radius: 23px;
+        margin-bottom: 20px;
+    }
+
+    .intro h2 {
+        font-size: 30px;
+    }
+
+    .intro p {
+        font-size: 17px;
     }
 
     .cards {
@@ -335,74 +371,65 @@ header p {
     }
 
     .certificate-card {
-        padding: 22px 18px;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: stretch;
-
+        padding: 20px 18px;
+        border-radius: 23px;
         gap: 18px;
-
-        border-radius: 24px;
     }
 
     .card-top {
-        display: flex;
-        align-items: center;
-        gap: 18px;
+        gap: 16px;
+        align-items: flex-start;
     }
 
     .card-icon {
-        width: 75px;
-        min-width: 75px;
-        height: 75px;
+        width: 70px;
+        min-width: 70px;
+        height: 70px;
+        border-radius: 18px;
+        font-size: 32px;
+    }
 
-        border-radius: 20px;
-
-        font-size: 34px;
+    .badge {
+        font-size: 12px;
+        padding: 6px 13px;
+        margin-bottom: 8px;
     }
 
     .certificate-info h3 {
-        font-size: 24px;
+        font-size: 22px;
+        line-height: 1.2;
     }
 
     .issuer {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .certificate-date {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .view-button {
         width: 100%;
-        min-width: 0;
-
-        padding: 16px;
-
+        padding: 15px;
         font-size: 16px;
     }
 
     .viewer-header {
-        height: 64px;
-        min-height: 64px;
-
+        height: 62px;
+        min-height: 62px;
         padding: 0 12px 0 16px;
     }
 
     .viewer-title {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .close-button {
-        width: 46px;
-        height: 46px;
-
-        font-size: 28px;
+        width: 44px;
+        height: 44px;
+        font-size: 27px;
     }
 }
-
 </style>
 </head>
 
