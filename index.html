@@ -934,344 +934,94 @@
          PDF.JS
     ========================= -->
 
-    <script type="module">
+    <script>
 
-        import * as pdfjsLib
-        from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/6.3.289/pdf.min.mjs";
+    /* =========================
+       OPEN PDF
+    ========================= */
+
+    function openPDF(pdf, title) {
+
+        const viewer =
+            document.getElementById("viewer");
+
+        const frame =
+            document.getElementById("pdfViewer");
+
+        const titleElement =
+            document.getElementById("viewerTitle");
+
+
+        /* Set title */
+        titleElement.innerText = title;
+
+
+        /* Create correct GitHub Pages URL */
+        const pdfURL =
+            new URL(pdf, window.location.href).href;
 
 
         /*
-         * PDF.js worker
+         * Open the PDF directly inside
+         * the full-screen iframe.
          */
 
-        pdfjsLib.GlobalWorkerOptions.workerSrc =
-            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/6.3.289/pdf.worker.min.mjs";
+        frame.src =
+            pdfURL + "#toolbar=1&navpanes=0&scrollbar=1";
 
 
+        /* Show viewer */
+        viewer.classList.add("active");
 
-        /* =========================
-           OPEN PDF
-        ========================= */
 
-        async function openPDF(pdf, title) {
+        /* Stop background scrolling */
+        document.body.style.overflow = "hidden";
+    }
 
-            const viewer =
-                document.getElementById("viewer");
 
-            const content =
-                document.getElementById("pdfContent");
 
-            const titleElement =
-                document.getElementById("viewerTitle");
+    /* =========================
+       CLOSE PDF
+    ========================= */
 
+    function closePDF() {
 
-            /*
-             * Set title
-             */
+        const viewer =
+            document.getElementById("viewer");
 
-            titleElement.innerText = title;
+        const frame =
+            document.getElementById("pdfViewer");
 
 
-            /*
-             * Show viewer
-             */
+        /* Hide viewer */
+        viewer.classList.remove("active");
 
-            viewer.classList.add("active");
 
+        /* Clear PDF */
+        frame.src = "";
 
-            /*
-             * Stop background scrolling
-             */
 
-            document.body.style.overflow = "hidden";
+        /* Restore scrolling */
+        document.body.style.overflow = "auto";
+    }
 
 
-            /*
-             * Show loading
-             */
 
-            content.innerHTML = `
-                <div class="pdf-loading">
-                    Loading document...
-                </div>
-            `;
+    /* =========================
+       ESC KEY
+    ========================= */
 
+    document.addEventListener(
+        "keydown",
+        function(event) {
 
-            try {
+            if (event.key === "Escape") {
 
-                /*
-                 * Create full PDF URL
-                 */
-
-                const pdfURL =
-                    new URL(
-                        pdf,
-                        window.location.href
-                    ).href;
-
-
-                /*
-                 * Load PDF
-                 */
-
-                const loadingTask =
-                    pdfjsLib.getDocument(pdfURL);
-
-
-                const pdfDocument =
-                    await loadingTask.promise;
-
-
-                /*
-                 * Clear loading message
-                 */
-
-                content.innerHTML = "";
-
-
-                /*
-                 * Render every page
-                 */
-
-                for (
-                    let pageNumber = 1;
-                    pageNumber <= pdfDocument.numPages;
-                    pageNumber++
-                ) {
-
-                    const page =
-                        await pdfDocument.getPage(
-                            pageNumber
-                        );
-
-
-                    /*
-                     * Original page size
-                     */
-
-                    const originalViewport =
-                        page.getViewport({
-                            scale: 1
-                        });
-
-
-                    /*
-                     * Available screen width
-                     */
-
-                    const availableWidth =
-                        content.clientWidth - 20;
-
-
-                    /*
-                     * Calculate scale
-                     */
-
-                    let scale =
-                        availableWidth /
-                        originalViewport.width;
-
-
-                    /*
-                     * Don't make the PDF
-                     * unnecessarily huge on PC.
-                     */
-
-                    if (scale > 1.35) {
-                        scale = 1.35;
-                    }
-
-
-                    /*
-                     * Minimum scale
-                     */
-
-                    if (scale < 0.5) {
-                        scale = 0.5;
-                    }
-
-
-                    /*
-                     * Create viewport
-                     */
-
-                    const viewport =
-                        page.getViewport({
-                            scale: scale
-                        });
-
-
-                    /*
-                     * Create canvas
-                     */
-
-                    const canvas =
-                        document.createElement(
-                            "canvas"
-                        );
-
-
-                    canvas.className =
-                        "pdf-page";
-
-
-                    const context =
-                        canvas.getContext(
-                            "2d"
-                        );
-
-
-                    /*
-                     * Better rendering quality
-                     */
-
-                    const devicePixelRatio =
-                        window.devicePixelRatio ||
-                        1;
-
-
-                    canvas.width =
-                        Math.floor(
-                            viewport.width *
-                            devicePixelRatio
-                        );
-
-
-                    canvas.height =
-                        Math.floor(
-                            viewport.height *
-                            devicePixelRatio
-                        );
-
-
-                    canvas.style.width =
-                        viewport.width + "px";
-
-
-                    canvas.style.height =
-                        viewport.height + "px";
-
-
-                    content.appendChild(canvas);
-
-
-                    /*
-                     * Render PDF page
-                     */
-
-                    await page.render({
-
-                        canvasContext: context,
-
-                        viewport: viewport,
-
-                        transform: [
-                            devicePixelRatio,
-                            0,
-                            0,
-                            devicePixelRatio,
-                            0,
-                            0
-                        ]
-
-                    }).promise;
-
-                }
-
-            }
-
-            catch (error) {
-
-                console.error(
-                    "PDF loading error:",
-                    error
-                );
-
-
-                content.innerHTML = `
-
-                    <div class="pdf-error">
-
-                        <strong>
-                            Unable to display this PDF.
-                        </strong>
-
-                        <br><br>
-
-                        Please check that the PDF file
-                        exists in your GitHub repository.
-
-                    </div>
-
-                `;
+                closePDF();
 
             }
 
         }
+    );
 
-
-
-        /* =========================
-           CLOSE PDF
-        ========================= */
-
-        function closePDF() {
-
-            document
-                .getElementById("viewer")
-                .classList
-                .remove("active");
-
-
-            document
-                .getElementById("pdfContent")
-                .innerHTML = "";
-
-
-            /*
-             * Allow page scrolling again
-             */
-
-            document.body.style.overflow =
-                "auto";
-        }
-
-
-
-        /* =========================
-           ESC KEY
-        ========================= */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    closePDF();
-
-                }
-
-            }
-        );
-
-
-        /*
-         * Make functions available
-         * to the buttons.
-         */
-
-        window.openPDF =
-            openPDF;
-
-        window.closePDF =
-            closePDF;
-
-    </script>
-
-
-</body>
-
-</html>
+</script>
