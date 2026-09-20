@@ -857,133 +857,47 @@
          JAVASCRIPT
     ========================= -->
 
-    <script>
+   <script>
+
+    function openPDF(pdf, title) {
+
+        // Set viewer title
+        document.getElementById("viewerTitle").innerText = title;
+
+        // Open PDF directly from GitHub Pages
+        const pdfURL = new URL(pdf, window.location.href).href;
+
+        // Load PDF directly — NO Google Docs
+        document.getElementById("pdfViewer").src = pdfURL;
+
+        // Show viewer
+        document.getElementById("viewer").classList.add("active");
+
+        // Prevent page scrolling
+        document.body.style.overflow = "hidden";
+    }
 
 
-        /* =========================
-           OPEN PDF
-        ========================= */
+    function closePDF() {
 
-        function openPDF(pdf, title) {
+        // Hide viewer
+        document.getElementById("viewer").classList.remove("active");
 
-            /*
-             * Show document title
-             */
+        // Clear PDF
+        document.getElementById("pdfViewer").src = "";
 
-            document.getElementById(
-                "viewerTitle"
-            ).innerText = title;
+        // Restore scrolling
+        document.body.style.overflow = "";
+    }
 
 
-            /*
-             * Create the full GitHub
-             * Pages URL for the PDF.
-             */
+    // Close with ESC
+    document.addEventListener("keydown", function(event) {
 
-            const pdfURL =
-                new URL(
-                    pdf,
-                    window.location.href
-                ).href;
-
-
-            /*
-             * Google Docs embedded viewer.
-             *
-             * This is used because some
-             * Android browsers do not
-             * display PDFs properly
-             * inside an iframe.
-             */
-
-            const viewerURL =
-                "https://docs.google.com/gview?embedded=1&url="
-                + encodeURIComponent(pdfURL);
-
-
-            /*
-             * Load PDF viewer
-             */
-
-            document.getElementById(
-                "pdfViewer"
-            ).src = viewerURL;
-
-
-            /*
-             * Show full-screen viewer
-             */
-
-            document.getElementById(
-                "viewer"
-            ).classList.add("active");
-
-
-            /*
-             * Prevent background scrolling
-             */
-
-            document.body.style.overflow =
-                "hidden";
+        if (event.key === "Escape") {
+            closePDF();
         }
 
+    });
 
-
-        /* =========================
-           CLOSE PDF
-        ========================= */
-
-        function closePDF() {
-
-            /*
-             * Hide viewer
-             */
-
-            document.getElementById(
-                "viewer"
-            ).classList.remove("active");
-
-
-            /*
-             * Clear iframe
-             */
-
-            document.getElementById(
-                "pdfViewer"
-            ).src = "";
-
-
-            /*
-             * Allow page scrolling again
-             */
-
-            document.body.style.overflow =
-                "auto";
-        }
-
-
-
-        /* =========================
-           ESC KEY
-        ========================= */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "Escape") {
-
-                    closePDF();
-
-                }
-
-            }
-        );
-
-
-    </script>
-
-
-</body>
-
-</html>
+</script>
