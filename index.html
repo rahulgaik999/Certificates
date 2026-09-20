@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="Rahul Adinath Gaikwad - Certificates and Professional Portfolio">
+      content="Rahul Gaikwad - Professional Portfolio">
 
 <title>Rahul Gaikwad | Portfolio</title>
+
 
 <style>
 
@@ -36,554 +40,599 @@ body {
         Arial,
         sans-serif;
 
-    background: #f5f3ee;
-    color: #172033;
+    background: #0b0b0d;
+
+    color: #ffffff;
+
     min-height: 100vh;
 }
 
 
 /* =========================================================
-   TOP BAR
+   PAGE BACKGROUND
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    left: -250px;
+    top: -200px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 132, 0, 0.08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    right: -250px;
+    bottom: -200px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 70, 0, 0.06);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVBAR
    ========================================================= */
 
 .navbar {
     width: 100%;
-    padding: 22px 6%;
 
-    background: #101827;
-    color: white;
+    padding: 24px 5%;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(11,11,13,.82);
+
+    backdrop-filter: blur(20px);
 
     position: relative;
-    z-index: 10;
+
+    z-index: 20;
 }
 
 .nav-inner {
-    max-width: 1180px;
+    max-width: 1250px;
+
     margin: auto;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
 .brand {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
-    font-size: 17px;
+    font-size: 15px;
+
     font-weight: 800;
+
     letter-spacing: .3px;
 }
 
-.brand-dot {
-    width: 10px;
-    height: 10px;
+.brand-mark {
+    width: 30px;
+    height: 30px;
 
-    background: #f3a712;
-    border-radius: 50%;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #ff8500;
+
+    color: #111;
+
+    font-size: 13px;
+
+    font-weight: 900;
 }
 
-.nav-text {
-    color: #cbd5e1;
-    font-size: 13px;
+.nav-right {
+    color: #777980;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   HERO
+   MAIN LAYOUT
    ========================================================= */
 
-.hero {
-    max-width: 1180px;
-    margin: 0 auto;
+.wrapper {
+    max-width: 1250px;
 
-    min-height: 390px;
+    min-height: calc(100vh - 80px);
 
-    padding: 70px 6% 65px;
+    margin: auto;
+
+    padding: 55px 5% 70px;
 
     display: grid;
-    grid-template-columns: 1.35fr .65fr;
 
-    align-items: center;
-    gap: 50px;
+    grid-template-columns:
+        0.85fr 1.5fr;
 
-    position: relative;
+    gap: 70px;
 }
 
 
-/* Decorative background */
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
 
-.hero::before {
-    content: "";
+.intro {
+    position: sticky;
 
-    position: absolute;
+    top: 40px;
 
-    width: 270px;
-    height: 270px;
-
-    right: 8%;
-    top: 50px;
-
-    border-radius: 50%;
-
-    background: rgba(243, 167, 18, .12);
-
-    filter: blur(3px);
-
-    z-index: -1;
+    align-self: start;
 }
 
+.small-label {
+    color: #ff8500;
 
-/* Hero text */
+    font-size: 11px;
 
-.hero-label {
-    display: inline-flex;
-
-    align-items: center;
-    gap: 8px;
-
-    padding: 7px 13px;
-
-    margin-bottom: 18px;
-
-    background: #fff7df;
-
-    color: #a96900;
-
-    border: 1px solid #f1d48d;
-
-    border-radius: 30px;
-
-    font-size: 12px;
     font-weight: 800;
 
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
-.hero h1 {
-    font-size: clamp(42px, 6vw, 70px);
-
-    line-height: .98;
-
-    letter-spacing: -3px;
-
-    color: #101827;
-
-    font-weight: 900;
+    letter-spacing: 2px;
 
     margin-bottom: 20px;
 }
 
-.hero h1 span {
-    color: #dc920d;
-}
+.intro h1 {
+    font-size:
+        clamp(48px, 6vw, 78px);
 
-.hero p {
-    max-width: 570px;
+    line-height: .9;
 
-    color: #687386;
+    letter-spacing: -4px;
 
-    font-size: 16px;
-
-    line-height: 1.8;
-}
-
-
-/* Hero visual */
-
-.hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-card {
-    width: 235px;
-    height: 235px;
-
-    background: #101827;
-
-    border-radius: 35px;
-
-    transform: rotate(3deg);
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    box-shadow:
-        0 30px 70px rgba(16, 24, 39, .20);
-}
-
-.profile-card::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 12px;
-
-    border: 1px solid rgba(255,255,255,.12);
-
-    border-radius: 26px;
-}
-
-.profile-icon {
-    width: 78px;
-    height: 78px;
-
-    border-radius: 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #f3a712;
-
-    font-size: 33px;
-
-    margin-bottom: 18px;
-}
-
-.profile-card strong {
-    color: white;
-
-    font-size: 18px;
-
-    letter-spacing: .3px;
-}
-
-.profile-card small {
-    color: #9aa6b8;
-
-    margin-top: 6px;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
-.container {
-    max-width: 1180px;
-
-    margin: 0 auto;
-
-    padding: 10px 6% 80px;
-}
-
-
-/* =========================================================
-   SECTION INTRO
-   ========================================================= */
-
-.section-intro {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
+    font-weight: 900;
 
     margin-bottom: 28px;
 }
 
-.section-intro small {
-    color: #a96900;
+.intro h1 span {
+    color: #ff8500;
+
+    display: block;
+}
+
+.intro-description {
+    color: #8b8d94;
+
+    max-width: 390px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   PROFILE BOX
+   ========================================================= */
+
+.profile-box {
+    width: 100%;
+
+    max-width: 390px;
+
+    padding: 20px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff8500,
+            #ff5b00
+        );
+
+    color: #111;
+
+    font-size: 18px;
+
+    font-weight: 900;
+}
+
+.profile-info strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.profile-info span {
+    color: #777980;
 
     font-size: 11px;
+}
 
-    font-weight: 800;
+
+/* =========================================================
+   LEFT DECORATION
+   ========================================================= */
+
+.vertical-line {
+    position: absolute;
+
+    left: -25px;
+
+    top: 5px;
+
+    width: 2px;
+
+    height: 130px;
+
+    background:
+        linear-gradient(
+            #ff8500,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+   ========================================================= */
+
+.documents {
+    padding-top: 5px;
+}
+
+.documents-header {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 18px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+.documents-header small {
+    color: #666970;
+
+    font-size: 10px;
 
     text-transform: uppercase;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
-.section-intro h2 {
+.documents-header h2 {
     margin-top: 6px;
 
-    font-size: 32px;
+    font-size: 27px;
 
-    color: #101827;
+    font-weight: 800;
 
-    letter-spacing: -1px;
+    letter-spacing: -.8px;
 }
 
 .document-count {
-    color: #7b8494;
+    color: #666970;
 
-    font-size: 13px;
-
-    padding-bottom: 5px;
+    font-size: 11px;
 }
 
 
 /* =========================================================
-   DOCUMENT GRID
+   DOCUMENT LIST
    ========================================================= */
 
-.cards {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 20px;
-}
-
-
-/* =========================================================
-   DOCUMENT CARD
-   ========================================================= */
-
-.card {
-    min-height: 225px;
-
-    background: white;
-
-    border: 1px solid #e5e0d6;
-
-    border-radius: 24px;
-
-    padding: 27px;
-
+.document-list {
     display: flex;
 
     flex-direction: column;
 
-    justify-content: space-between;
+    gap: 13px;
+}
 
+
+/* =========================================================
+   DOCUMENT
+   ========================================================= */
+
+.document {
     position: relative;
+
+    min-height: 170px;
+
+    padding: 24px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.018)
+        );
 
     overflow: hidden;
 
     transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
 }
 
-.card::after {
+.document:hover {
+    transform: translateX(7px);
+
+    border-color:
+        rgba(255,133,0,.35);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,133,0,.08),
+            rgba(255,255,255,.025)
+        );
+}
+
+.document::before {
     content: "";
 
     position: absolute;
 
-    width: 150px;
-    height: 150px;
+    left: 0;
+    top: 0;
+    bottom: 0;
 
-    right: -70px;
-    top: -70px;
+    width: 3px;
 
-    border-radius: 50%;
+    background: #ff8500;
 
-    background: #fff3d1;
+    transform: scaleY(0);
+
+    transform-origin: bottom;
 
     transition: transform .3s ease;
 }
 
-.card:hover {
-    transform: translateY(-7px);
-
-    border-color: #e1c77e;
-
-    box-shadow:
-        0 25px 50px rgba(16, 24, 39, .10);
-}
-
-.card:hover::after {
-    transform: scale(1.25);
+.document:hover::before {
+    transform: scaleY(1);
 }
 
 
-/* Card top */
+/* =========================================================
+   DOCUMENT TOP
+   ========================================================= */
 
-.card-top {
+.document-top {
     display: flex;
 
     justify-content: space-between;
 
     align-items: flex-start;
-
-    position: relative;
-
-    z-index: 2;
 }
 
-.card-number {
-    color: #a0a8b5;
+.document-number {
+    color: #55575e;
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-weight: 800;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
-.card-icon {
-    width: 54px;
-    height: 54px;
+.document-icon {
+    width: 45px;
+    height: 45px;
 
-    border-radius: 17px;
+    border-radius: 12px;
 
-    background: #101827;
+    background: #171719;
+
+    border:
+        1px solid rgba(255,255,255,.08);
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    font-size: 23px;
-
-    box-shadow:
-        0 10px 20px rgba(16,24,39,.14);
-}
-
-
-/* Card content */
-
-.card-content {
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 22px;
-}
-
-.card-content h3 {
-    color: #101827;
-
-    font-size: 20px;
-
-    font-weight: 800;
-
-    margin-bottom: 7px;
-}
-
-.issuer {
-    color: #697386;
-
-    font-size: 13px;
-
-    margin-bottom: 5px;
-}
-
-.date {
-    color: #a1a8b4;
-
-    font-size: 11px;
-}
-
-
-/* Card bottom */
-
-.card-bottom {
-    margin-top: 25px;
-
-    position: relative;
-
-    z-index: 2;
+    font-size: 19px;
 }
 
 
 /* =========================================================
-   BUTTON
+   DOCUMENT BODY
    ========================================================= */
 
+.document-body {
+    margin-top: 18px;
+}
+
+.document-body h3 {
+    font-size: 19px;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.document-body p {
+    color: #777980;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+.document-date {
+    color: #55575e;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DOCUMENT ACTION
+   ========================================================= */
+
+.document-action {
+    position: absolute;
+
+    right: 24px;
+
+    bottom: 23px;
+}
+
 .view-button {
-    border: none;
+    border:
+        1px solid rgba(255,133,0,.30);
 
-    width: 100%;
+    background:
+        rgba(255,133,0,.08);
 
-    padding: 13px 17px;
+    color: #ff9a2e;
 
-    border-radius: 12px;
+    padding: 9px 15px;
 
-    background: #101827;
+    border-radius: 9px;
 
-    color: white;
+    font-size: 11px;
 
-    font-size: 13px;
-
-    font-weight: 750;
+    font-weight: 800;
 
     cursor: pointer;
 
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
     transition:
         background .2s ease,
+        color .2s ease,
         transform .2s ease;
 }
 
-.view-button::after {
-    content: "→";
-
-    font-size: 17px;
-
-    color: #f3a712;
-}
-
 .view-button:hover {
-    background: #18243a;
+    background: #ff8500;
+
+    color: #111;
 
     transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   FUTURE CARD
+   FUTURE DOCUMENT
    ========================================================= */
 
-.future-card {
+.future-document {
+    border-style: dashed;
+
+    opacity: .62;
+}
+
+.future-document:hover {
+    transform: none;
+
+    border-color:
+        rgba(255,255,255,.12);
+
     background:
-        linear-gradient(
-            135deg,
-            #101827,
-            #17243a
-        );
-
-    border: none;
+        rgba(255,255,255,.025);
 }
 
-.future-card::after {
-    background: rgba(243,167,18,.12);
+.future-document::before {
+    display: none;
 }
 
-.future-card .card-number {
-    color: #7e8a9e;
+.future-document .document-icon {
+    color: #777980;
 }
 
-.future-card .card-icon {
-    background: #f3a712;
-    color: #101827;
+.future-document .document-body h3 {
+    color: #b0b1b6;
 }
 
-.future-card .card-content h3 {
-    color: white;
-}
+.future-text {
+    color: #62646b !important;
 
-.future-card .issuer,
-.future-card .future-text {
-    color: #aab4c3;
-}
+    max-width: 500px;
 
-.future-card:hover {
-    border-color: transparent;
+    line-height: 1.6;
 }
 
 
@@ -592,15 +641,19 @@ body {
    ========================================================= */
 
 .footer {
-    text-align: center;
+    max-width: 1250px;
 
-    padding: 0 20px 35px;
+    margin: auto;
 
-    color: #8c95a3;
+    padding:
+        0 5%
+        35px;
 
-    font-size: 11px;
+    color: #4f5157;
 
-    letter-spacing: .3px;
+    font-size: 10px;
+
+    letter-spacing: .6px;
 }
 
 
@@ -616,7 +669,7 @@ body {
     width: 100vw;
     height: 100vh;
 
-    background: #090e18;
+    background: #08090b;
 
     z-index: 99999;
 
@@ -634,24 +687,25 @@ body {
 
     min-height: 62px;
 
+    padding:
+        0 18px 0 22px;
+
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
 
-    padding: 0 18px 0 22px;
-
-    background: #101827;
+    background: #111214;
 
     border-bottom:
         1px solid rgba(255,255,255,.08);
 }
 
 .viewer-title {
-    color: white;
+    color: #f4f4f5;
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 700;
 
@@ -665,19 +719,21 @@ body {
 }
 
 .close-button {
-    width: 40px;
-    height: 40px;
+    width: 39px;
+    height: 39px;
 
-    border-radius: 12px;
+    min-width: 39px;
+
+    border-radius: 10px;
 
     border:
-        1px solid rgba(255,255,255,.12);
+        1px solid rgba(255,255,255,.10);
 
-    background: #1d293b;
+    background: #1b1c1f;
 
-    color: white;
+    color: #eee;
 
-    font-size: 23px;
+    font-size: 22px;
 
     cursor: pointer;
 
@@ -686,19 +742,18 @@ body {
     align-items: center;
     justify-content: center;
 
-    transition:
-        background .2s ease,
-        transform .2s ease;
+    transition: .2s ease;
 }
 
 .close-button:hover {
-    background: #2b3a50;
+    background: #ff8500;
 
-    transform: rotate(4deg);
+    color: #111;
 }
 
 #pdfViewer {
     width: 100%;
+
     height: 100%;
 
     flex: 1;
@@ -710,148 +765,118 @@ body {
 
 
 /* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .wrapper {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding-top: 45px;
+    }
+
+    .intro {
+        position: relative;
+
+        top: auto;
+    }
+
+    .intro-description,
+    .profile-box {
+        max-width: 600px;
+    }
+
+    .intro h1 {
+        font-size: 65px;
+    }
+}
+
+
+/* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 560px) {
 
-    .hero {
-        grid-template-columns: 1fr;
+    .navbar {
+        padding: 19px 20px;
+    }
 
-        text-align: center;
+    .nav-right {
+        display: none;
+    }
 
-        padding-top: 50px;
+    .wrapper {
+        padding:
+            38px 20px
+            55px;
 
         gap: 40px;
     }
 
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
+    .intro h1 {
+        font-size: 51px;
+
+        letter-spacing: -3px;
     }
 
-    .hero-visual {
-        order: -1;
+    .intro-description {
+        font-size: 13px;
     }
 
-    .profile-card {
-        width: 180px;
-        height: 180px;
+    .documents-header h2 {
+        font-size: 23px;
     }
 
-    .profile-icon {
-        width: 62px;
-        height: 62px;
+    .document {
+        min-height: 180px;
 
-        border-radius: 18px;
-
-        font-size: 26px;
+        padding: 20px;
     }
 
-    .profile-card strong {
-        font-size: 15px;
+    .document-body h3 {
+        font-size: 17px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
+    .document-action {
+        right: 20px;
+
+        bottom: 20px;
+    }
+
+    .view-button {
+        padding:
+            8px 12px;
+
+        font-size: 10px;
     }
 }
 
 
 /* =========================================================
-   PHONE
-   ========================================================= */
-
-@media (max-width: 520px) {
-
-    .navbar {
-        padding: 18px 20px;
-    }
-
-    .nav-text {
-        display: none;
-    }
-
-    .hero {
-        padding:
-            42px 20px
-            45px;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-
-        letter-spacing: -2px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .profile-card {
-        width: 165px;
-        height: 165px;
-    }
-
-    .container {
-        padding:
-            10px 18px
-            55px;
-    }
-
-    .section-intro {
-        align-items: flex-start;
-    }
-
-    .section-intro h2 {
-        font-size: 26px;
-    }
-
-    .document-count {
-        font-size: 11px;
-    }
-
-    .card {
-        min-height: 215px;
-
-        padding: 22px;
-
-        border-radius: 20px;
-    }
-
-    .card-content h3 {
-        font-size: 18px;
-    }
-
-    .viewer-header {
-        height: 56px;
-        min-height: 56px;
-
-        padding-left: 15px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONE
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
 
-    .hero h1 {
-        font-size: 37px;
+    .intro h1 {
+        font-size: 45px;
     }
 
-    .section-intro h2 {
-        font-size: 23px;
+    .profile-box {
+        padding: 16px;
     }
 
-    .card {
-        padding: 19px;
+    .document {
+        padding: 17px;
     }
 }
 
 </style>
+
 </head>
 
 
@@ -867,11 +892,16 @@ body {
     <div class="nav-inner">
 
         <div class="brand">
-            <div class="brand-dot"></div>
+
+            <div class="brand-mark">
+                RG
+            </div>
+
             Rahul Gaikwad
+
         </div>
 
-        <div class="nav-text">
+        <div class="nav-right">
             Personal Portfolio
         </div>
 
@@ -881,234 +911,242 @@ body {
 
 
 <!-- =====================================================
-     HERO
+     MAIN
      ===================================================== -->
 
-<section class="hero">
+<main class="wrapper">
 
-    <div class="hero-content">
 
-        <div class="hero-label">
-            ● Professional Portfolio
+    <!-- =================================================
+         LEFT PROFILE
+         ================================================= -->
+
+    <section class="intro">
+
+        <div class="vertical-line"></div>
+
+        <div class="small-label">
+            Portfolio / 2026
         </div>
 
         <h1>
             Rahul
-            <span>Gaikwad</span>
+            <span>Gaikwad.</span>
         </h1>
 
-        <p>
-            Certifications, professional documents and
-            academic achievements — presented in one
-            clean and modern portfolio.
+        <p class="intro-description">
+
+            Welcome to my professional document portfolio.
+            Explore my certifications and resume in one
+            simple, modern space.
+
         </p>
 
-    </div>
 
+        <div class="profile-box">
 
-    <div class="hero-visual">
-
-        <div class="profile-card">
-
-            <div class="profile-icon">
-                📄
+            <div class="profile-avatar">
+                RG
             </div>
 
-            <strong>Rahul Gaikwad</strong>
+            <div class="profile-info">
 
-            <small>Professional Profile</small>
+                <strong>
+                    Rahul Gaikwad
+                </strong>
+
+                <span>
+                    Certifications & Professional Development
+                </span>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =====================================================
-     MAIN
-     ===================================================== -->
+    <!-- =================================================
+         RIGHT DOCUMENTS
+         ================================================= -->
 
-<main class="container">
-
-
-    <div class="section-intro">
-
-        <div>
-            <small>My Portfolio</small>
-
-            <h2>
-                Documents
-            </h2>
-        </div>
-
-        <div class="document-count">
-            2 Documents
-        </div>
-
-    </div>
+    <section class="documents">
 
 
-    <div class="cards">
-
-
-        <!-- =================================================
-             HTML CERTIFICATE
-             ================================================= -->
-
-        <div class="card">
+        <div class="documents-header">
 
             <div>
 
-                <div class="card-top">
+                <small>
+                    Selected Documents
+                </small>
 
-                    <div class="card-number">
-                        01 / CERTIFICATE
+                <h2>
+                    My Work
+                </h2>
+
+            </div>
+
+            <div class="document-count">
+                02 DOCUMENTS
+            </div>
+
+        </div>
+
+
+        <div class="document-list">
+
+
+            <!-- =========================================
+                 CERTIFICATE
+                 ========================================= -->
+
+            <article class="document">
+
+                <div class="document-top">
+
+                    <div class="document-number">
+                        01
                     </div>
 
-                    <div class="card-icon">
+                    <div class="document-icon">
                         🏆
                     </div>
 
                 </div>
 
 
-                <div class="card-content">
+                <div class="document-body">
 
                     <h3>
                         HTML Certificate
                     </h3>
 
-                    <div class="issuer">
+                    <p>
                         A2Z IT HUB PRIVATE LIMITED
-                    </div>
+                    </p>
 
-                    <div class="date">
+                    <div class="document-date">
                         17 May 2025
                     </div>
 
                 </div>
 
-            </div>
+
+                <div class="document-action">
+
+                    <button
+                        class="view-button"
+                        onclick="openPDF(
+                            'Rahul-Adinath-Gaikwad-HTML-Certificate.pdf',
+                            'HTML – Certificate'
+                        )">
+
+                        View
+
+                    </button>
+
+                </div>
+
+            </article>
 
 
-            <div class="card-bottom">
+            <!-- =========================================
+                 RESUME
+                 ========================================= -->
 
-                <button
-                    class="view-button"
-                    onclick="openPDF(
-                        'Rahul-Adinath-Gaikwad-HTML-Certificate.pdf',
-                        'HTML – Certificate'
-                    )">
+            <article class="document">
 
-                    View Certificate
+                <div class="document-top">
 
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             RESUME
-             ================================================= -->
-
-        <div class="card">
-
-            <div>
-
-                <div class="card-top">
-
-                    <div class="card-number">
-                        02 / RESUME
+                    <div class="document-number">
+                        02
                     </div>
 
-                    <div class="card-icon">
-                        📑
+                    <div class="document-icon">
+                        📄
                     </div>
 
                 </div>
 
 
-                <div class="card-content">
+                <div class="document-body">
 
                     <h3>
                         My Resume
                     </h3>
 
-                    <div class="issuer">
+                    <p>
                         Resume / CV
-                    </div>
+                    </p>
 
-                    <div class="date">
+                    <div class="document-date">
                         Professional Profile
                     </div>
 
                 </div>
 
-            </div>
+
+                <div class="document-action">
+
+                    <button
+                        class="view-button"
+                        onclick="openPDF(
+                            'resume.pdf',
+                            'My Resume'
+                        )">
+
+                        View
+
+                    </button>
+
+                </div>
+
+            </article>
 
 
-            <div class="card-bottom">
+            <!-- =========================================
+                 FUTURE
+                 ========================================= -->
 
-                <button
-                    class="view-button"
-                    onclick="openPDF(
-                        'resume.pdf',
-                        'My Resume'
-                    )">
+            <article
+                class="document future-document">
 
-                    View Resume
+                <div class="document-top">
 
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             FUTURE DOCUMENTS
-             ================================================= -->
-
-        <div class="card future-card">
-
-            <div>
-
-                <div class="card-top">
-
-                    <div class="card-number">
-                        03 / COMING SOON
+                    <div class="document-number">
+                        03
                     </div>
 
-                    <div class="card-icon">
+                    <div class="document-icon">
                         +
                     </div>
 
                 </div>
 
 
-                <div class="card-content">
+                <div class="document-body">
 
                     <h3>
                         More Certifications
                     </h3>
 
-                    <div class="future-text">
-                        New certificates can be added here
-                        as you complete additional courses
-                        and professional programs.
-                    </div>
+                    <p class="future-text">
+
+                        New certificates can be added here as
+                        you complete additional courses and
+                        professional programs.
+
+                    </p>
 
                 </div>
 
-            </div>
+            </article>
+
 
         </div>
 
-
-    </div>
+    </section>
 
 </main>
 
@@ -1218,9 +1256,7 @@ function closePDF() {
 
     viewer.classList.remove("active");
 
-
     frame.src = "";
-
 
     document.body.style.overflow =
         "auto";
@@ -1232,9 +1268,7 @@ document.addEventListener(
     function(event) {
 
         if (event.key === "Escape") {
-
             closePDF();
-
         }
 
     }
@@ -1244,4 +1278,5 @@ document.addEventListener(
 
 
 </body>
+
 </html>
