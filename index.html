@@ -7,6 +7,7 @@
     <title>Rahul Adinath Gaikwad | Certifications</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -17,10 +18,10 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #f5f7fb;
             color: #1f2937;
-            min-height: 100vh;
         }
 
         /* HEADER */
+
         header {
             background: linear-gradient(135deg, #111827, #1e3a8a);
             color: white;
@@ -39,6 +40,7 @@
         }
 
         /* MAIN */
+
         .container {
             max-width: 950px;
             margin: 50px auto;
@@ -60,367 +62,297 @@
         }
 
         /* CERTIFICATE CARD */
-        .certificate {
+
+        .certificate-card {
             background: white;
             border-radius: 16px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-            overflow: hidden;
-        }
-
-        /* CLICKABLE TITLE */
-        .certificate summary {
-            cursor: pointer;
-            list-style: none;
+            margin-bottom: 18px;
             padding: 25px 30px;
+
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            align-items: center;
+
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+
+            transition: 0.2s;
         }
 
-        .certificate summary::-webkit-details-marker {
-            display: none;
+        .certificate-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.10);
         }
 
-        .certificate summary:hover {
-            background: #f8fafc;
-        }
-
-        .summary-content h3 {
+        .certificate-info h3 {
             font-size: 21px;
             color: #172554;
-            margin-bottom: 7px;
-        }
-
-        .summary-content p {
-            color: #2563eb;
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        .arrow {
-            font-size: 22px;
-            color: #2563eb;
-            transition: transform 0.2s ease;
-        }
-
-        details[open] .arrow {
-            transform: rotate(180deg);
-        }
-
-        /* EXPANDED CONTENT */
-        .certificate-content {
-            border-top: 1px solid #e5e7eb;
-            padding: 30px;
-        }
-
-        .certificate-layout {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-        }
-
-        /* PDF PREVIEW */
-        .certificate-preview {
-            width: 280px;
-            min-width: 280px;
-            height: 200px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #f8fafc;
-        }
-
-        .certificate-preview iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* INFORMATION */
-        .certificate-info {
-            flex: 1;
-        }
-
-        .certificate-info h4 {
-            font-size: 25px;
-            margin-bottom: 10px;
-            color: #172554;
+            margin-bottom: 8px;
         }
 
         .issuer {
             color: #2563eb;
             font-weight: bold;
-            margin-bottom: 20px;
         }
 
-        .details {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .detail {
-            background: #f8fafc;
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .detail strong {
-            display: block;
-            font-size: 11px;
+        .certificate-date {
             color: #6b7280;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-        }
-
-        .detail span {
-            font-weight: bold;
-            color: #1f2937;
-        }
-
-        .description {
-            color: #4b5563;
-            line-height: 1.6;
-            margin-bottom: 22px;
+            margin-top: 8px;
+            font-size: 14px;
         }
 
         /* BUTTON */
-        .button {
-            display: inline-block;
+
+        .view-button {
             background: #2563eb;
             color: white;
-            text-decoration: none;
+            border: none;
+
             padding: 13px 22px;
+
             border-radius: 9px;
+
+            font-size: 15px;
             font-weight: bold;
-            transition: background 0.2s ease;
+
+            cursor: pointer;
+
+            transition: 0.2s;
         }
 
-        .button:hover {
+        .view-button:hover {
             background: #1d4ed8;
         }
 
+        /* FULL SCREEN VIEWER */
+
+        .viewer {
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.95);
+
+            z-index: 9999;
+        }
+
+        .viewer.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* TOP BAR */
+
+        .viewer-header {
+            height: 65px;
+
+            background: #111827;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            flex-shrink: 0;
+        }
+
+        .viewer-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .close-button {
+            background: #ef4444;
+
+            color: white;
+
+            border: none;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            line-height: 42px;
+
+            text-align: center;
+        }
+
+        .close-button:hover {
+            background: #dc2626;
+        }
+
+        /* PDF */
+
+        .viewer iframe {
+            width: 100%;
+            height: calc(100vh - 65px);
+
+            border: none;
+
+            background: white;
+        }
+
         /* FOOTER */
+
         footer {
             text-align: center;
+
             padding: 30px 20px;
+
             color: #6b7280;
+
             font-size: 14px;
         }
 
         /* MOBILE */
-        @media (max-width: 700px) {
 
-            header {
-                padding: 40px 20px;
-            }
+        @media (max-width: 650px) {
 
             header h1 {
                 font-size: 28px;
             }
 
-            .container {
-                margin: 35px auto;
-            }
-
-            .certificate summary {
-                padding: 20px;
-            }
-
-            .summary-content h3 {
-                font-size: 18px;
-            }
-
-            .certificate-content {
-                padding: 20px;
-            }
-
-            .certificate-layout {
+            .certificate-card {
                 flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 20px;
             }
 
-            .certificate-preview {
+            .view-button {
                 width: 100%;
-                min-width: 100%;
-                height: 220px;
             }
 
-            .certificate-info h4 {
-                font-size: 21px;
+            .viewer-header {
+                padding: 0 15px;
+            }
+
+            .viewer-title {
+                font-size: 14px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+    <!-- HEADER -->
+
     <header>
+
         <h1>Rahul Adinath Gaikwad</h1>
-        <p>Certifications & Professional Development</p>
+
+        <p>
+            Certifications & Professional Development
+        </p>
+
     </header>
 
+
+    <!-- CERTIFICATES -->
 
     <main class="container">
 
         <div class="section-title">
+
             <h2>My Certifications</h2>
-            <p>A collection of my professional learning achievements</p>
+
+            <p>
+                A collection of my professional learning achievements
+            </p>
+
         </div>
 
 
         <!-- CERTIFICATE 1 -->
-        <details class="certificate" open>
 
-            <summary>
+        <div class="certificate-card">
 
-                <div class="summary-content">
-                    <h3>HTML – Certificate of Completion</h3>
-                    <p>A2Z IT HUB PVT LTD</p>
+            <div class="certificate-info">
+
+                <h3>
+                    HTML – Certificate of Completion
+                </h3>
+
+                <div class="issuer">
+                    A2Z IT HUB PVT LTD
                 </div>
 
-                <span class="arrow">⌄</span>
-
-            </summary>
-
-
-            <div class="certificate-content">
-
-                <div class="certificate-layout">
-
-                    <!-- Certificate Preview -->
-                    <div class="certificate-preview">
-
-                        <iframe
-                            src="Rahul-Adinath-Gaikwad-HTML-Certificate.pdf#toolbar=0&navpanes=0">
-                        </iframe>
-
-                    </div>
-
-
-                    <!-- Certificate Information -->
-                    <div class="certificate-info">
-
-                        <h4>HTML – Certificate of Completion</h4>
-
-                        <div class="issuer">
-                            A2Z IT HUB PVT LTD
-                        </div>
-
-
-                        <div class="details">
-
-                            <div class="detail">
-                                <strong>Course</strong>
-                                <span>HTML</span>
-                            </div>
-
-                            <div class="detail">
-                                <strong>Issued</strong>
-                                <span>17 May 2025</span>
-                            </div>
-
-                        </div>
-
-
-                        <p class="description">
-                            Successfully completed the HTML course and gained
-                            knowledge of HTML and web development fundamentals.
-                        </p>
-
-
-                        <a
-                            class="button"
-                            href="Rahul-Adinath-Gaikwad-HTML-Certificate.pdf"
-                            target="_blank">
-
-                            View Certificate →
-
-                        </a>
-
-                    </div>
-
+                <div class="certificate-date">
+                    HTML · 17 May 2025
                 </div>
 
             </div>
 
-        </details>
+
+            <button
+                class="view-button"
+                onclick="openCertificate(
+                    'Rahul-Adinath-Gaikwad-HTML-Certificate.pdf',
+                    'HTML – Certificate of Completion'
+                )">
+
+                View Certificate →
+
+            </button>
+
+        </div>
 
 
         <!--
         ==================================================
-        FUTURE CERTIFICATE TEMPLATE
-        Copy the block below whenever you add a new certificate.
+        ADD MORE CERTIFICATES LIKE THIS
         ==================================================
 
-        <details class="certificate">
+        <div class="certificate-card">
 
-            <summary>
+            <div class="certificate-info">
 
-                <div class="summary-content">
-                    <h3>YOUR COURSE – Certificate of Completion</h3>
-                    <p>YOUR ISSUING ORGANIZATION</p>
+                <h3>
+                    YOUR COURSE – Certificate of Completion
+                </h3>
+
+                <div class="issuer">
+                    YOUR INSTITUTE
                 </div>
 
-                <span class="arrow">⌄</span>
-
-            </summary>
-
-            <div class="certificate-content">
-
-                <div class="certificate-layout">
-
-                    <div class="certificate-preview">
-                        <iframe
-                            src="YOUR-CERTIFICATE.pdf#toolbar=0&navpanes=0">
-                        </iframe>
-                    </div>
-
-                    <div class="certificate-info">
-
-                        <h4>YOUR COURSE – Certificate of Completion</h4>
-
-                        <div class="issuer">
-                            YOUR ISSUING ORGANIZATION
-                        </div>
-
-                        <div class="details">
-
-                            <div class="detail">
-                                <strong>Course</strong>
-                                <span>YOUR COURSE</span>
-                            </div>
-
-                            <div class="detail">
-                                <strong>Issued</strong>
-                                <span>DATE</span>
-                            </div>
-
-                        </div>
-
-                        <p class="description">
-                            Brief description of your certificate.
-                        </p>
-
-                        <a
-                            class="button"
-                            href="YOUR-CERTIFICATE.pdf"
-                            target="_blank">
-
-                            View Certificate →
-
-                        </a>
-
-                    </div>
-
+                <div class="certificate-date">
+                    YOUR COURSE · YOUR DATE
                 </div>
 
             </div>
 
-        </details>
+            <button
+                class="view-button"
+                onclick="openCertificate(
+                    'YOUR-CERTIFICATE.pdf',
+                    'YOUR COURSE – Certificate of Completion'
+                )">
+
+                View Certificate →
+
+            </button>
+
+        </div>
 
         -->
 
@@ -428,9 +360,98 @@
     </main>
 
 
+    <!-- FOOTER -->
+
     <footer>
+
         © 2025 Rahul Adinath Gaikwad · Certificate Portfolio
+
     </footer>
+
+
+    <!-- FULL SCREEN CERTIFICATE VIEWER -->
+
+    <div
+        id="certificateViewer"
+        class="viewer">
+
+
+        <div class="viewer-header">
+
+            <div
+                id="viewerTitle"
+                class="viewer-title">
+
+                Certificate
+
+            </div>
+
+
+            <button
+                class="close-button"
+                onclick="closeCertificate()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <iframe
+            id="certificateFrame"
+            src="">
+        </iframe>
+
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function openCertificate(pdf, title) {
+
+            document.getElementById("viewerTitle").innerText = title;
+
+            document.getElementById("certificateFrame").src =
+                pdf + "#toolbar=1&navpanes=0&scrollbar=1";
+
+            document
+                .getElementById("certificateViewer")
+                .classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function closeCertificate() {
+
+            document
+                .getElementById("certificateViewer")
+                .classList.remove("active");
+
+            document.getElementById("certificateFrame").src = "";
+
+            document.body.style.overflow = "auto";
+        }
+
+
+        /* ESC KEY TO CLOSE */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                closeCertificate();
+
+            }
+
+        });
+
+    </script>
+
 
 </body>
 </html>
