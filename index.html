@@ -29,8 +29,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f3f7f9;
-            color: #17212b;
+            background: #f7f9fc;
+            color: #172033;
         }
 
 
@@ -40,15 +40,15 @@
 
         header {
             width: 100%;
-            padding: 21px 20px 53px;
+            padding: 21px 20px 54px;
             text-align: center;
             color: #ffffff;
 
             background:
                 linear-gradient(
                     135deg,
-                    #102a43,
-                    #164e63
+                    #0b1f3a,
+                    #173f73
                 );
         }
 
@@ -62,13 +62,13 @@
         header p {
             font-size: clamp(13px, 1.5vw, 16px);
             line-height: 1.3;
-            color: #d5edf2;
+            color: #dbe7f5;
         }
 
         .header-line {
             width: 82px;
             height: 3px;
-            background: #2dd4bf;
+            background: #d4a72c;
             border-radius: 20px;
             margin: 13px auto 0;
         }
@@ -91,19 +91,21 @@
         .intro {
             background: #ffffff;
 
+            border: 1px solid #e6ebf2;
+
             border-radius: 16px;
 
-            padding: 18px 18px;
+            padding: 18px;
 
             text-align: center;
 
             box-shadow:
                 0 7px 22px
-                rgba(16, 42, 67, 0.08);
+                rgba(11, 31, 58, 0.08);
 
             margin-bottom: 15px;
 
-            animation: fadeDown 0.65s ease both;
+            animation: introIn 0.65s ease both;
         }
 
         .intro h2 {
@@ -111,11 +113,11 @@
             line-height: 1.15;
             font-weight: 700;
             margin-bottom: 6px;
-            color: #17212b;
+            color: #0b1f3a;
         }
 
         .intro p {
-            color: #687782;
+            color: #68758a;
             font-size: clamp(13px, 1.5vw, 16px);
             line-height: 1.4;
         }
@@ -136,7 +138,7 @@
 
             background: #ffffff;
 
-            border: 1px solid #e5edef;
+            border: 1px solid #e5eaf1;
 
             border-radius: 15px;
 
@@ -154,10 +156,11 @@
 
             box-shadow:
                 0 6px 18px
-                rgba(16, 42, 67, 0.07);
+                rgba(11, 31, 58, 0.065);
 
             opacity: 0;
-            animation: cardAppear 0.65s ease forwards;
+
+            animation: cardIn 0.6s ease forwards;
 
             transition:
                 transform 0.25s ease,
@@ -170,7 +173,7 @@
         }
 
         .certificate-card:nth-child(2) {
-            animation-delay: 0.3s;
+            animation-delay: 0.30s;
         }
 
         .certificate-card:nth-child(3) {
@@ -178,17 +181,17 @@
         }
 
         .certificate-card:nth-child(4) {
-            animation-delay: 0.6s;
+            animation-delay: 0.60s;
         }
 
         .certificate-card:hover {
             transform: translateY(-3px);
 
-            border-color: #b8e5df;
+            border-color: #d4a72c;
 
             box-shadow:
                 0 11px 25px
-                rgba(16, 42, 67, 0.11);
+                rgba(11, 31, 58, 0.11);
         }
 
 
@@ -227,33 +230,35 @@
             background:
                 linear-gradient(
                     135deg,
-                    #0f766e,
-                    #14b8a6
+                    #1d4ed8,
+                    #2563eb
                 );
 
             box-shadow:
                 0 5px 12px
-                rgba(20, 184, 166, 0.18);
+                rgba(37, 99, 235, 0.18);
 
             transition:
                 transform 0.25s ease;
         }
 
         .certificate-card:hover .card-icon {
-            transform: scale(1.05) rotate(-2deg);
+            transform:
+                scale(1.05)
+                rotate(-2deg);
         }
 
         .resume-icon {
             background:
                 linear-gradient(
                     135deg,
-                    #164e63,
-                    #256d85
+                    #b8860b,
+                    #d4a72c
                 );
 
             box-shadow:
                 0 5px 12px
-                rgba(22, 78, 99, 0.16);
+                rgba(212, 167, 44, 0.20);
         }
 
 
@@ -274,9 +279,9 @@
 
             border-radius: 30px;
 
-            background: #dff7f3;
+            background: #e8f0ff;
 
-            color: #0f766e;
+            color: #1d4ed8;
 
             font-size: 9px;
 
@@ -286,8 +291,8 @@
         }
 
         .badge.document {
-            background: #e3eef3;
-            color: #164e63;
+            background: #fff5d8;
+            color: #9a7208;
         }
 
         .certificate-info h3 {
@@ -299,11 +304,11 @@
 
             margin-bottom: 4px;
 
-            color: #17212b;
+            color: #172033;
         }
 
         .issuer {
-            color: #0f766e;
+            color: #1d4ed8;
 
             font-size: 12px;
 
@@ -315,7 +320,7 @@
         }
 
         .certificate-date {
-            color: #71808a;
+            color: #718096;
 
             font-size: 11px;
 
@@ -338,13 +343,13 @@
 
             border-radius: 11px;
 
-            color: white;
+            color: #ffffff;
 
             background:
                 linear-gradient(
                     135deg,
-                    #0f766e,
-                    #14b8a6
+                    #1d4ed8,
+                    #2563eb
                 );
 
             font-size: 12px;
@@ -355,22 +360,27 @@
 
             box-shadow:
                 0 5px 13px
-                rgba(15, 118, 110, 0.17);
+                rgba(37, 99, 235, 0.18);
 
             transition:
                 transform 0.22s ease,
                 box-shadow 0.22s ease,
-                filter 0.22s ease;
+                background 0.22s ease;
         }
 
         .view-button:hover {
             transform: translateY(-2px);
 
-            filter: brightness(1.05);
+            background:
+                linear-gradient(
+                    135deg,
+                    #1740b0,
+                    #1d4ed8
+                );
 
             box-shadow:
                 0 8px 17px
-                rgba(15, 118, 110, 0.23);
+                rgba(37, 99, 235, 0.25);
         }
 
         .view-button:active {
@@ -390,7 +400,7 @@
             width: 100vw;
             height: 100vh;
 
-            background: #101820;
+            background: #111827;
 
             z-index: 99999;
 
@@ -413,7 +423,7 @@
 
             min-height: 54px;
 
-            background: #102a43;
+            background: #0b1f3a;
 
             display: flex;
 
@@ -423,7 +433,7 @@
 
             padding: 0 13px 0 17px;
 
-            color: white;
+            color: #ffffff;
         }
 
         .viewer-title {
@@ -453,7 +463,7 @@
 
             border-radius: 50%;
 
-            background: #173b55;
+            background: #173f73;
 
             color: #ffffff;
 
@@ -477,7 +487,7 @@
         }
 
         .close-button:hover {
-            background: #0f766e;
+            background: #d4a72c;
 
             transform: scale(1.05);
         }
@@ -498,7 +508,7 @@
 
             border: none;
 
-            background: #20272d;
+            background: #202228;
         }
 
 
@@ -506,7 +516,7 @@
            ANIMATIONS
         ========================= */
 
-        @keyframes fadeDown {
+        @keyframes introIn {
 
             from {
                 opacity: 0;
@@ -520,11 +530,11 @@
 
         }
 
-        @keyframes cardAppear {
+        @keyframes cardIn {
 
             from {
                 opacity: 0;
-                transform: translateY(18px);
+                transform: translateY(17px);
             }
 
             to {
