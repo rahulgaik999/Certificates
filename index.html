@@ -255,45 +255,69 @@
         }
 
         /* =========================
-           MOBILE
+           MOBILE / TABLET
+           PC DESIGN IS UNCHANGED
         ========================= */
         @media (max-width: 700px) {
 
             .page {
-                width: calc(100% - 22px);
+                width: calc(100% - 24px);
+                max-width: 100%;
                 padding-top: 10px;
+                padding-bottom: 30px;
             }
 
+            /* FIX MOBILE TOP SECTION */
             .hero {
-                gap: 15px;
-                padding: 15px 0;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 14px 0;
+                overflow: hidden;
             }
 
             .hero-left {
-                padding-left: 10px;
+                flex: 0 0 auto;
+                padding-left: 8px;
+                border-left-width: 2px;
             }
 
             .hero-label {
-                font-size: 9px;
-                letter-spacing: 1px;
+                font-size: 8px;
+                letter-spacing: .8px;
+                white-space: nowrap;
             }
 
             .hero-right {
-                padding-left: 15px;
+                flex: 1 1 auto;
+                min-width: 0;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                border-left: 1px solid #d2c9bc;
             }
 
             .hero-right h1 {
-                font-size: 25px;
-                letter-spacing: -.5px;
+                width: 100%;
+                max-width: 100%;
+                margin-left: 0;
+                font-size: clamp(18px, 6vw, 25px);
+                line-height: 1.15;
+                letter-spacing: -.4px;
+                white-space: normal;
+                overflow-wrap: break-word;
+                word-break: normal;
             }
 
             .certificate-section {
-                padding-top: 35px;
+                padding-top: 30px;
             }
 
             .certificate-item {
-                grid-template-columns:
-                    32px 1fr;
+                grid-template-columns: 32px minmax(0, 1fr);
                 gap: 10px;
                 padding: 20px 0;
             }
@@ -302,8 +326,14 @@
                 font-size: 20px;
             }
 
+            .certificate-info {
+                min-width: 0;
+            }
+
             .certificate-info h3 {
                 font-size: 19px;
+                line-height: 1.2;
+                overflow-wrap: break-word;
             }
 
             .certificate-info p {
@@ -321,39 +351,104 @@
             }
         }
 
+        /* =========================
+           SMALL PHONES
+        ========================= */
         @media (max-width: 430px) {
 
+            .page {
+                width: calc(100% - 20px);
+            }
+
             .hero {
-                gap: 10px;
+                gap: 8px;
+                padding: 13px 0;
+            }
+
+            .hero-left {
+                padding-left: 7px;
             }
 
             .hero-label {
                 font-size: 7px;
-                letter-spacing: .8px;
+                letter-spacing: .6px;
             }
 
             .hero-right {
-                padding-left: 9px;
+                padding-left: 8px;
             }
 
             .hero-right h1 {
-                font-size: 20px;
-                letter-spacing: -.3px;
+                font-size: clamp(17px, 5.5vw, 21px);
+                line-height: 1.15;
+                letter-spacing: -.25px;
+                margin-left: 0;
+                white-space: normal;
+            }
+
+            .certificate-section {
+                padding-top: 28px;
+            }
+
+            .certificate-item {
+                grid-template-columns: 28px minmax(0, 1fr);
+                gap: 9px;
+                padding: 19px 0;
+            }
+
+            .certificate-number {
+                font-size: 19px;
+            }
+
+            .certificate-info h3 {
+                font-size: 18px;
+            }
+
+            .view-button {
+                padding: 10px 14px;
+                font-size: 8px;
             }
         }
 
+        /* =========================
+           VERY SMALL PHONES
+        ========================= */
         @media (max-width: 380px) {
 
+            .page {
+                width: calc(100% - 16px);
+            }
+
+            .hero {
+                gap: 6px;
+            }
+
             .hero-label {
-                font-size: 6.5px;
+                font-size: 6px;
+                letter-spacing: .5px;
+            }
+
+            .hero-right {
+                padding-left: 7px;
             }
 
             .hero-right h1 {
-                font-size: 18px;
+                font-size: 17px;
+                line-height: 1.15;
+                margin-left: 0;
             }
 
             .certificate-info h3 {
                 font-size: 17px;
+            }
+
+            .certificate-info p {
+                font-size: 9px;
+            }
+
+            .view-button {
+                padding: 9px 12px;
+                font-size: 8px;
             }
         }
     </style>
@@ -368,13 +463,13 @@
 
             <div class="hero-left">
                 <span class="hero-label">
-                  Learning Archive
+                    Learning Archive
                 </span>
             </div>
 
             <div class="hero-right">
                 <h1>
-                   Rahul's  Certificates  &amp; Credentials
+                    Rahul's Certificates &amp; Credentials
                 </h1>
             </div>
 
@@ -386,7 +481,7 @@
 
             <div class="certificate-list">
 
-                <!-- CERTIFICATE -->
+                <!-- CERTIFICATE 1 -->
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -425,7 +520,7 @@
                 </article>
 
 
-                <!-- Certificate 2-->
+                <!-- CERTIFICATE 2 -->
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -464,6 +559,7 @@
                 </article>
 
 
+                <!-- CERTIFICATE 3 -->
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -501,7 +597,9 @@
 
                 </article>
 
-                 <article class="certificate-item">
+
+                <!-- CERTIFICATE 4 -->
+                <article class="certificate-item">
 
                     <div class="certificate-number">
                         04
@@ -538,7 +636,9 @@
 
                 </article>
 
-                 <article class="certificate-item">
+
+                <!-- CERTIFICATE 5 -->
+                <article class="certificate-item">
 
                     <div class="certificate-number">
                         05
