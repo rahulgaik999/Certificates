@@ -67,8 +67,8 @@
         .hero-right {
             display: flex;
             align-items: center;
-            padding-left: 35px;
-            border-left: 1px solid #d2c9bc;
+            justify-content: center;
+            width: 100%;
         }
 
         .hero-right h1 {
@@ -82,7 +82,8 @@
             letter-spacing: -1px;
             color: #252525;
             white-space: nowrap;
-            margin-left: 103px;
+            margin-left: 0;
+            text-align: center;
         }
 
         /* =========================
@@ -271,33 +272,22 @@
             .hero {
                 width: 100%;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 10px;
                 padding: 14px 0;
-                overflow: hidden;
-            }
-
-            .hero-left {
-                flex: 0 0 auto;
-                padding-left: 8px;
-                border-left-width: 2px;
-            }
-
-            .hero-label {
-                font-size: 8px;
-                letter-spacing: .8px;
-                white-space: nowrap;
+                text-align: center;
             }
 
             .hero-right {
-                flex: 1 1 auto;
+                width: 100%;
                 min-width: 0;
                 display: flex;
                 align-items: center;
-                padding-left: 10px;
-                border-left: 1px solid #d2c9bc;
+                justify-content: center;
+                padding: 0;
+                border: 0;
+                text-align: center;
             }
 
             .hero-right h1 {
@@ -317,17 +307,22 @@
             }
 
             .certificate-item {
-                grid-template-columns: 32px minmax(0, 1fr);
+                grid-template-columns: minmax(0, 1fr);
+                justify-items: center;
                 gap: 10px;
-                padding: 20px 0;
+                padding: 20px 8px;
+                text-align: center;
             }
 
             .certificate-number {
                 font-size: 20px;
+                text-align: center;
             }
 
             .certificate-info {
                 min-width: 0;
+                width: 100%;
+                text-align: center;
             }
 
             .certificate-info h3 {
@@ -345,8 +340,8 @@
             }
 
             .view-button {
-                grid-column: 2;
-                justify-self: start;
+                grid-column: auto;
+                justify-self: center;
                 margin-top: 2px;
             }
         }
@@ -375,7 +370,8 @@
             }
 
             .hero-right {
-                padding-left: 8px;
+                padding: 0;
+                text-align: center;
             }
 
             .hero-right h1 {
@@ -391,13 +387,21 @@
             }
 
             .certificate-item {
-                grid-template-columns: 28px minmax(0, 1fr);
+                grid-template-columns: minmax(0, 1fr);
+                justify-items: center;
                 gap: 9px;
-                padding: 19px 0;
+                padding: 19px 8px;
+                text-align: center;
             }
 
             .certificate-number {
                 font-size: 19px;
+                text-align: center;
+            }
+
+            .certificate-info {
+                width: 100%;
+                text-align: center;
             }
 
             .certificate-info h3 {
@@ -405,6 +409,9 @@
             }
 
             .view-button {
+                grid-column: auto;
+                justify-self: center;
+                margin: 2px auto 0;
                 padding: 10px 14px;
                 font-size: 8px;
             }
@@ -429,13 +436,17 @@
             }
 
             .hero-right {
-                padding-left: 7px;
+                padding: 0;
+                text-align: center;
             }
 
             .hero-right h1 {
+                width: 100%;
+                max-width: 100%;
                 font-size: 17px;
                 line-height: 1.15;
-                margin-left: 0;
+                margin: 0 auto;
+                text-align: center;
             }
 
             .certificate-info h3 {
@@ -460,12 +471,6 @@
 
         <!-- TOP ONE-LINE CONTENT -->
         <section class="hero">
-
-            <div class="hero-left">
-                <span class="hero-label">
-                    Learning Archive
-                </span>
-            </div>
 
             <div class="hero-right">
                 <h1>
