@@ -949,6 +949,13 @@
                 font-size: 8px;
             }
         }
+        /* Remove diagonal corner decorations on desktop only */
+@media (min-width: 701px) {
+    .certificate-item::before,
+    .certificate-item::after {
+        display: none;
+    }
+}
 
     </style>
 </head>
