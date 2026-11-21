@@ -1,12 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Rahul Adinath Gaikwad | Certificates</title>
 
     <style>
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        :root {
+            --navy: #102D43;
+            --teal: #007F83;
+            --teal-dark: #006B70;
+            --teal-light: #DDF6F5;
+            --aqua: #BDEDEB;
+            --yellow: #FFC400;
+            --yellow-light: #FFF0B5;
+            --white: #FFFFFF;
+            --muted: #526571;
+            --border: #BDE9E8;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -17,193 +36,369 @@
         body {
             width: 100%;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f3efe8;
-            color: #252525;
+            background:
+                radial-gradient(
+                    circle at 90% 5%,
+                    #E7F9FA 0,
+                    transparent 28%
+                ),
+                #FFFFFF;
+            color: var(--navy);
         }
 
         /* =========================
            PAGE
         ========================= */
+
         .page {
             width: min(1180px, calc(100% - 40px));
             margin: auto;
-            padding: 15px 0 40px;
+            padding: 25px 0 55px;
         }
 
         /* =========================
-           TOP ONE-LINE CONTENT
+           HERO HEADING
         ========================= */
+
         .hero {
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 35px;
+            justify-content: flex-start;
             width: 100%;
-            padding: 18px 0;
-            border-bottom: 1px solid #cfc6b8;
-            text-align: center;
-        }
-
-        .hero-left {
-            display: flex;
-            align-items: center;
-            padding-left: 14px;
-            border-left: 3px solid #a27b32;
-        }
-
-        .hero-label {
-            color: #a27b32;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.8px;
-            text-transform: uppercase;
-            white-space: nowrap;
+            padding: 28px 15px 35px;
+            border-bottom: 1px solid var(--border);
         }
 
         .hero-right {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             width: 100%;
         }
 
         .hero-right h1 {
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-            font-size: 40px;
-            line-height: 1;
-            font-weight: 400;
-            letter-spacing: -1px;
-            color: #252525;
-            white-space: nowrap;
-            margin-left: 0;
-            text-align: center;
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(28px, 4vw, 43px);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -1.2px;
+            color: var(--navy);
+        }
+
+        .hero-right h1 span {
+            color: var(--teal);
+        }
+
+        .hero-right h1::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 6px;
+            margin-top: 17px;
+            background: var(--yellow);
+            border-radius: 20px;
         }
 
         /* =========================
            CERTIFICATE SECTION
         ========================= */
+
         .certificate-section {
-            display: block;
-            padding-top: 40px;
+            padding-top: 35px;
+        }
+
+        .certificate-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
         /* =========================
-           CERTIFICATE LIST
+           CERTIFICATE CARD
         ========================= */
-        .certificate-list {
-            border-top: 1px solid #cfc6b8;
-        }
 
         .certificate-item {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
             display: grid;
-            grid-template-columns:
-                55px minmax(0, 1fr) auto;
-            align-items: center;
-            gap: 20px;
-            min-height: 145px;
-            padding: 23px 5px 23px 0;
-            border-bottom: 1px solid #cfc6b8;
+            grid-template-columns: 115px minmax(0, 1fr);
+            align-items: start;
+            column-gap: 20px;
+            row-gap: 12px;
+
+            min-height: 215px;
+            padding: 24px 30px;
+
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 21px;
+
+            box-shadow:
+                0 9px 24px rgba(0, 127, 131, 0.09);
+
             transition:
-                background .25s ease,
-                padding .25s ease;
+                transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
+        }
+
+        /* Yellow curved accent */
+
+        .certificate-item::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+
+            right: -2px;
+            bottom: -2px;
+
+            width: 205px;
+            height: 85px;
+
+            background: var(--yellow);
+
+            clip-path: polygon(
+                100% 0,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        /* Teal curved accent */
+
+        .certificate-item::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+
+            right: -2px;
+            bottom: -2px;
+
+            width: 190px;
+            height: 73px;
+
+            background: linear-gradient(
+                135deg,
+                #00A9A8,
+                #006B70
+            );
+
+            clip-path: polygon(
+                100% 0,
+                100% 100%,
+                0 100%
+            );
         }
 
         .certificate-item:hover {
-            background: #ebe5db;
-            padding-left: 15px;
-            padding-right: 15px;
+            transform: translateY(-5px);
+
+            border-color: #7ED5D2;
+
+            box-shadow:
+                0 14px 30px rgba(0, 127, 131, 0.15);
         }
+
+        /* =========================
+           CERTIFICATE NUMBER
+        ========================= */
 
         .certificate-number {
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-            color: #b4a99a;
+            position: relative;
+            z-index: 1;
+
+            grid-column: 1;
+            grid-row: 1 / span 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 88px;
+            height: 64px;
+
+            background: linear-gradient(
+                135deg,
+                #08AAA9,
+                #00747A
+            );
+
+            color: var(--white);
+
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 28px;
+            font-weight: 800;
+
+            border-radius: 18px 0 23px 0;
+
+            box-shadow:
+                0 5px 12px rgba(0, 127, 131, 0.16);
         }
 
+        /* =========================
+           CERTIFICATE INFORMATION
+        ========================= */
+
         .certificate-info {
+            position: relative;
+            z-index: 1;
+
+            grid-column: 2;
+            grid-row: 1;
+
             min-width: 0;
+            padding-top: 1px;
         }
 
         .certificate-type {
             display: inline-block;
-            margin-bottom: 7px;
-            color: #a27b32;
-            font-size: 9px;
+
+            margin-bottom: 10px;
+            padding: 7px 17px;
+
+            background: var(--yellow-light);
+            color: #815000;
+
+            border-radius: 30px;
+
+            font-size: 12px;
             font-weight: 800;
-            letter-spacing: 1.4px;
+            letter-spacing: .8px;
             text-transform: uppercase;
         }
 
         .certificate-info h3 {
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-            font-size:
-                clamp(19px, 2.3vw, 26px);
-            font-weight: 400;
-            line-height: 1.2;
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: var(--navy);
+
+            font-size: clamp(19px, 2.4vw, 27px);
+            font-weight: 800;
+            line-height: 1.25;
+
+            overflow-wrap: break-word;
         }
 
         .certificate-info p {
-            margin-top: 7px;
-            color: #766e63;
-            font-size: 11px;
+            margin-top: 12px;
+
+            color: #465964;
+
+            font-size: 15px;
+            font-weight: 500;
         }
 
         .certificate-date {
-            margin-top: 6px;
-            color: #9a9185;
-            font-size: 9px;
+            margin-top: 8px;
+
+            color: #687A83;
+
+            font-size: 13px;
+            font-weight: 500;
         }
 
         /* =========================
-           BUTTON
+           VIEW CERTIFICATE BUTTON
         ========================= */
+
         .view-button {
-            border: 1px solid #252525;
-            background: transparent;
-            color: #252525;
-            padding: 11px 16px;
-            border-radius: 0;
+            position: relative;
+            z-index: 2;
+
+            grid-column: 2;
+            grid-row: 2;
+
+            justify-self: start;
+            align-self: start;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            min-width: 210px;
+            min-height: 49px;
+
+            padding: 13px 22px;
+
+            border: 1px solid var(--teal);
+            border-radius: 13px;
+
+            background: linear-gradient(
+                135deg,
+                #009A9C,
+                #006F75
+            );
+
+            color: var(--white);
+
             cursor: pointer;
-            font-size: 9px;
+
+            font-size: 13px;
             font-weight: 800;
-            letter-spacing: .8px;
+            letter-spacing: .5px;
             text-transform: uppercase;
+
             white-space: nowrap;
+
+            box-shadow:
+                0 5px 12px rgba(0, 127, 131, 0.13);
+
             transition:
                 background .2s ease,
-                color .2s ease,
-                transform .2s ease;
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .view-button::after {
+            content: "↗";
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1;
         }
 
         .view-button:hover {
-            background: #252525;
-            color: white;
+            background: var(--navy);
+            border-color: var(--navy);
+
             transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 16px rgba(16, 45, 67, 0.18);
+        }
+
+        .view-button:focus-visible,
+        .close-button:focus-visible {
+            outline: 3px solid var(--yellow);
+            outline-offset: 4px;
         }
 
         /* =========================
            PDF VIEWER
         ========================= */
+
         .viewer {
             position: fixed;
             inset: 0;
+
             width: 100vw;
             height: 100vh;
-            background: #171717;
+            height: 100dvh;
+
+            background: #102D43;
+
             z-index: 99999;
+
             display: none;
             flex-direction: column;
         }
@@ -213,126 +408,307 @@
         }
 
         .viewer-header {
-            height: 58px;
-            min-height: 58px;
+            height: 62px;
+            min-height: 62px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 18px;
-            background: #252525;
-            color: white;
+
+            padding: 0 20px;
+
+            background: #006B70;
+            color: var(--white);
+
+            border-bottom: 3px solid var(--yellow);
         }
 
         .viewer-title {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 14px;
+
+            font-size: 15px;
             font-weight: 700;
         }
 
         .close-button {
-            width: 38px;
-            height: 38px;
-            border: 1px solid #555;
+            width: 39px;
+            height: 39px;
+
+            border: 1px solid rgba(255,255,255,.5);
+            border-radius: 10px;
+
             background: transparent;
-            color: white;
+            color: var(--white);
+
             cursor: pointer;
-            font-size: 22px;
+
+            font-size: 24px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
+            transition:
+                background .2s ease,
+                color .2s ease;
         }
 
         .close-button:hover {
-            background: #a27b32;
-            border-color: #a27b32;
+            background: var(--yellow);
+            color: var(--navy);
+            border-color: var(--yellow);
         }
 
         #pdfViewer {
             width: 100%;
             flex: 1;
             border: none;
+            background: #FFFFFF;
         }
 
         /* =========================
-           MOBILE / TABLET
-           PC DESIGN IS UNCHANGED
+           TABLET
         ========================= */
+
         @media (max-width: 700px) {
 
             .page {
-                width: calc(100% - 24px);
-                max-width: 100%;
-                padding-top: 10px;
-                padding-bottom: 30px;
+                width: calc(100% - 28px);
+                padding-top: 12px;
+                padding-bottom: 35px;
             }
 
-            /* FIX MOBILE TOP SECTION */
             .hero {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 14px 0;
-                text-align: center;
-            }
-
-            .hero-right {
-                width: 100%;
-                min-width: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0;
-                border: 0;
-                text-align: center;
+                padding: 22px 5px 27px;
             }
 
             .hero-right h1 {
-                width: 100%;
-                max-width: 100%;
-                margin-left: 0;
-                font-size: clamp(18px, 6vw, 25px);
-                line-height: 1.15;
-                letter-spacing: -.4px;
-                white-space: normal;
-                overflow-wrap: break-word;
-                word-break: normal;
+                font-size: clamp(25px, 5.5vw, 34px);
+                letter-spacing: -.7px;
             }
 
             .certificate-section {
-                padding-top: 30px;
+                padding-top: 25px;
+            }
+
+            .certificate-list {
+                gap: 18px;
             }
 
             .certificate-item {
-                grid-template-columns: minmax(0, 1fr);
-                justify-items: center;
-                gap: 10px;
-                padding: 20px 8px;
-                text-align: center;
+                grid-template-columns: 78px minmax(0, 1fr);
+                column-gap: 12px;
+                row-gap: 11px;
+
+                min-height: 185px;
+                padding: 18px 16px;
+
+                border-radius: 17px;
             }
 
             .certificate-number {
-                font-size: 20px;
-                text-align: center;
+                width: 66px;
+                height: 53px;
+                font-size: 23px;
+                border-radius: 14px 0 18px 0;
             }
 
-            .certificate-info {
-                min-width: 0;
-                width: 100%;
-                text-align: center;
+            .certificate-type {
+                margin-bottom: 7px;
+                padding: 6px 13px;
+                font-size: 10px;
             }
 
             .certificate-info h3 {
-                font-size: 19px;
-                line-height: 1.2;
-                overflow-wrap: break-word;
+                font-size: clamp(17px, 3vw, 21px);
+                line-height: 1.25;
             }
 
             .certificate-info p {
+                margin-top: 9px;
+                font-size: 12px;
+            }
+
+            .certificate-date {
+                margin-top: 6px;
                 font-size: 10px;
+            }
+
+            .view-button {
+                min-width: 0;
+                min-height: 43px;
+                padding: 11px 16px;
+                font-size: 10px;
+                gap: 9px;
+                border-radius: 10px;
+            }
+
+            .certificate-item::before {
+                width: 135px;
+                height: 58px;
+            }
+
+            .certificate-item::after {
+                width: 125px;
+                height: 50px;
+            }
+        }
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 430px) {
+
+            .page {
+                width: calc(100% - 22px);
+                padding-top: 8px;
+                padding-bottom: 28px;
+            }
+
+            .hero {
+                padding: 18px 3px 22px;
+            }
+
+            .hero-right h1 {
+                font-size: clamp(21px, 6vw, 27px);
+                line-height: 1.2;
+                letter-spacing: -.6px;
+            }
+
+            .hero-right h1::after {
+                width: 105px;
+                height: 5px;
+                margin-top: 12px;
+            }
+
+            .certificate-section {
+                padding-top: 21px;
+            }
+
+            .certificate-list {
+                gap: 15px;
+            }
+
+            .certificate-item {
+                grid-template-columns: 62px minmax(0, 1fr);
+
+                column-gap: 9px;
+                row-gap: 10px;
+
+                min-height: 170px;
+                padding: 15px 11px;
+
+                border-radius: 15px;
+            }
+
+            .certificate-number {
+                width: 53px;
+                height: 46px;
+                font-size: 20px;
+                border-radius: 12px 0 16px 0;
+            }
+
+            .certificate-info {
+                padding-top: 1px;
+            }
+
+            .certificate-type {
+                margin-bottom: 6px;
+                padding: 5px 10px;
+                font-size: 9px;
+                letter-spacing: .6px;
+            }
+
+            .certificate-info h3 {
+                font-size: 17px;
+                line-height: 1.25;
+            }
+
+            .certificate-info p {
+                margin-top: 8px;
+                font-size: 10px;
+            }
+
+            .certificate-date {
+                margin-top: 5px;
+                font-size: 9px;
+                line-height: 1.4;
+            }
+
+            .view-button {
+                min-height: 39px;
+                padding: 10px 12px;
+                font-size: 9px;
+                letter-spacing: .3px;
+                gap: 7px;
+                border-radius: 9px;
+            }
+
+            .view-button::after {
+                font-size: 16px;
+            }
+
+            .certificate-item::before {
+                width: 105px;
+                height: 48px;
+            }
+
+            .certificate-item::after {
+                width: 95px;
+                height: 41px;
+            }
+
+            .viewer-header {
+                height: 55px;
+                min-height: 55px;
+                padding: 0 12px;
+            }
+
+            .viewer-title {
+                font-size: 12px;
+            }
+
+            .close-button {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            .page {
+                width: calc(100% - 18px);
+            }
+
+            .hero-right h1 {
+                font-size: 21px;
+            }
+
+            .certificate-item {
+                grid-template-columns: 49px minmax(0, 1fr);
+                column-gap: 7px;
+                padding: 13px 9px;
+            }
+
+            .certificate-number {
+                width: 44px;
+                height: 41px;
+                font-size: 18px;
+            }
+
+            .certificate-info h3 {
+                font-size: 16px;
+            }
+
+            .certificate-info p {
+                font-size: 9px;
             }
 
             .certificate-date {
@@ -340,128 +716,240 @@
             }
 
             .view-button {
-                grid-column: auto;
-                justify-self: center;
-                margin-top: 2px;
+                padding: 9px 10px;
+                font-size: 8px;
             }
         }
 
         /* =========================
-           SMALL PHONES
+           REDUCED MOTION
         ========================= */
-        @media (max-width: 430px) {
 
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+    
+        /* =========================
+           COMPACT LAYOUT + CENTERED TITLE
+           Only sizing and alignment adjustments
+        ========================= */
+
+        .page {
+            width: min(960px, calc(100% - 36px));
+            padding: 18px 0 32px;
+        }
+
+        .hero {
+            justify-content: center;
+            text-align: center;
+            padding: 18px 12px 24px;
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-right h1 {
+            display: block;
+            font-size: clamp(23px, 3.2vw, 35px);
+            line-height: 1.2;
+            letter-spacing: -.8px;
+            text-align: center;
+        }
+
+        .hero-right h1::after {
+            margin: 12px auto 0;
+        }
+
+        .certificate-section {
+            padding-top: 22px;
+        }
+
+        .certificate-list {
+            gap: 15px;
+        }
+
+        .certificate-item {
+            min-height: 165px;
+            padding: 18px 22px;
+            column-gap: 16px;
+            row-gap: 9px;
+            border-radius: 17px;
+        }
+
+        .certificate-number {
+            width: 72px;
+            height: 55px;
+            font-size: 23px;
+            border-radius: 14px 0 18px 0;
+        }
+
+        .certificate-type {
+            margin-bottom: 7px;
+            padding: 6px 13px;
+            font-size: 10px;
+        }
+
+        .certificate-info h3 {
+            font-size: clamp(17px, 2vw, 23px);
+        }
+
+        .certificate-info p {
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        .certificate-date {
+            margin-top: 6px;
+            font-size: 11px;
+        }
+
+        .view-button {
+            min-width: 175px;
+            min-height: 42px;
+            padding: 10px 16px;
+            font-size: 11px;
+            gap: 8px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                width: calc(100% - 28px);
+                padding-top: 12px;
+                padding-bottom: 25px;
+            }
+
+            .hero {
+                padding: 16px 5px 20px;
+            }
+
+            .hero-right h1 {
+                font-size: clamp(22px, 5vw, 30px);
+            }
+
+            .certificate-section {
+                padding-top: 18px;
+            }
+
+            .certificate-list {
+                gap: 13px;
+            }
+
+            .certificate-item {
+                min-height: 150px;
+                padding: 15px 13px;
+                grid-template-columns: 62px minmax(0, 1fr);
+                column-gap: 10px;
+                row-gap: 9px;
+            }
+
+            .certificate-number {
+                width: 53px;
+                height: 45px;
+                font-size: 19px;
+            }
+
+            .certificate-info h3 {
+                font-size: clamp(16px, 3vw, 19px);
+            }
+
+            .certificate-info p {
+                font-size: 11px;
+            }
+
+            .certificate-date {
+                font-size: 10px;
+            }
+
+            .view-button {
+                min-height: 38px;
+                padding: 9px 12px;
+                font-size: 9px;
+            }
+        }
+
+        @media (max-width: 430px) {
             .page {
                 width: calc(100% - 20px);
             }
 
-            .hero {
-                gap: 8px;
-                padding: 13px 0;
-            }
-
-            .hero-left {
-                padding-left: 7px;
-            }
-
-            .hero-label {
-                font-size: 7px;
-                letter-spacing: .6px;
-            }
-
-            .hero-right {
-                padding: 0;
-                text-align: center;
-            }
-
             .hero-right h1 {
-                font-size: clamp(17px, 5.5vw, 21px);
-                line-height: 1.15;
-                letter-spacing: -.25px;
-                margin-left: 0;
-                white-space: normal;
-            }
-
-            .certificate-section {
-                padding-top: 28px;
+                font-size: clamp(20px, 5.8vw, 25px);
+                letter-spacing: -.5px;
             }
 
             .certificate-item {
-                grid-template-columns: minmax(0, 1fr);
-                justify-items: center;
-                gap: 9px;
-                padding: 19px 8px;
-                text-align: center;
+                min-height: 140px;
+                padding: 13px 10px;
+                grid-template-columns: 50px minmax(0, 1fr);
+                column-gap: 8px;
             }
 
             .certificate-number {
-                font-size: 19px;
-                text-align: center;
-            }
-
-            .certificate-info {
-                width: 100%;
-                text-align: center;
+                width: 44px;
+                height: 40px;
+                font-size: 17px;
             }
 
             .certificate-info h3 {
-                font-size: 18px;
-            }
-
-            .view-button {
-                grid-column: auto;
-                justify-self: center;
-                margin: 2px auto 0;
-                padding: 10px 14px;
-                font-size: 8px;
-            }
-        }
-
-        /* =========================
-           VERY SMALL PHONES
-        ========================= */
-        @media (max-width: 380px) {
-
-            .page {
-                width: calc(100% - 16px);
-            }
-
-            .hero {
-                gap: 6px;
-            }
-
-            .hero-label {
-                font-size: 6px;
-                letter-spacing: .5px;
-            }
-
-            .hero-right {
-                padding: 0;
-                text-align: center;
-            }
-
-            .hero-right h1 {
-                width: 100%;
-                max-width: 100%;
-                font-size: 17px;
-                line-height: 1.15;
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .certificate-info h3 {
-                font-size: 17px;
+                font-size: 15px;
             }
 
             .certificate-info p {
+                font-size: 10px;
+            }
+
+            .certificate-date {
                 font-size: 9px;
             }
 
             .view-button {
-                padding: 9px 12px;
+                min-height: 36px;
+                padding: 8px 10px;
                 font-size: 8px;
             }
         }
+
+        @media (max-width: 360px) {
+            .page {
+                width: calc(100% - 16px);
+            }
+
+            .hero-right h1 {
+                font-size: 19px;
+            }
+
+            .certificate-item {
+                grid-template-columns: 43px minmax(0, 1fr);
+                column-gap: 7px;
+                padding: 12px 8px;
+            }
+
+            .certificate-number {
+                width: 39px;
+                height: 37px;
+                font-size: 16px;
+            }
+
+            .certificate-info h3 {
+                font-size: 14px;
+            }
+
+            .view-button {
+                padding: 8px 9px;
+                font-size: 8px;
+            }
+        }
+
     </style>
 </head>
 
@@ -469,24 +957,34 @@
 
     <div class="page">
 
-        <!-- TOP ONE-LINE CONTENT -->
+        <!-- =========================
+             HEADING
+        ========================= -->
+
         <section class="hero">
 
             <div class="hero-right">
+
                 <h1>
-                    Rahul's Certificates &amp; Credentials
+                    Rahul's <span>Certificates &amp; Credentials</span>
                 </h1>
+
             </div>
 
         </section>
 
 
-        <!-- CERTIFICATES -->
+        <!-- =========================
+             CERTIFICATES
+        ========================= -->
+
         <section class="certificate-section">
 
             <div class="certificate-list">
 
+
                 <!-- CERTIFICATE 1 -->
+
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -526,6 +1024,7 @@
 
 
                 <!-- CERTIFICATE 2 -->
+
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -565,6 +1064,7 @@
 
 
                 <!-- CERTIFICATE 3 -->
+
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -604,6 +1104,7 @@
 
 
                 <!-- CERTIFICATE 4 -->
+
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -643,6 +1144,7 @@
 
 
                 <!-- CERTIFICATE 5 -->
+
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -680,7 +1182,9 @@
 
                 </article>
 
+
                 <!-- CERTIFICATE 6 -->
+
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -694,7 +1198,7 @@
                         </span>
 
                         <h3>
-                           LOR – Certificate of Completion
+                            LOR – Certificate of Completion
                         </h3>
 
                         <p>
@@ -718,7 +1222,9 @@
 
                 </article>
 
+
                 <!-- CERTIFICATE 7 -->
+
                 <article class="certificate-item">
 
                     <div class="certificate-number">
@@ -736,7 +1242,7 @@
                         </h3>
 
                         <p>
-                           SimpliLearn SkillUp
+                            SimpliLearn SkillUp
                         </p>
 
                         <div class="certificate-date">
@@ -756,6 +1262,7 @@
 
                 </article>
 
+
             </div>
 
         </section>
@@ -763,7 +1270,10 @@
     </div>
 
 
-    <!-- PDF VIEWER -->
+    <!-- =========================
+         PDF VIEWER
+    ========================= -->
+
     <div
         id="viewer"
         class="viewer">
@@ -794,6 +1304,10 @@
     </div>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
     <script>
 
         function openPDF(pdf, title) {
@@ -801,11 +1315,10 @@
             document.getElementById("viewerTitle")
                 .innerText = title;
 
-            const pdfURL =
-                new URL(
-                    pdf,
-                    window.location.href
-                ).href;
+            const pdfURL = new URL(
+                pdf,
+                window.location.href
+            ).href;
 
             document.getElementById("pdfViewer")
                 .src = pdfURL;
